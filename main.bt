@@ -1,10 +1,28 @@
 [
   {
-    "version": "0.1.2"
+    "version": "1.1.0"
   },
   {
-    "id": "e26e990f-766a-4834-bd97-a2e594335d65",
-    "name": "524c5f9a-7037-4dcc-a1cc-a09450676aab",
-    "children": []
+    "metadata": {
+      "label": "524c5f9a-7037-4dcc-a1cc-a09450676aab"
+    },
+    "properties": {},
+    "children": [
+      {
+        "activated": true,
+        "metadata": {
+          "label": "Turn on light"
+        },
+        "properties": {
+          "name": "light",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
+        "type": "action"
+      }
+    ],
+    "id": "e26e990f-766a-4834-bd97-a2e594335d65"
   }
 ]
