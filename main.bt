@@ -11,16 +11,83 @@
       {
         "activated": true,
         "metadata": {
-          "label": "Turn on light"
+          "label": ""
         },
-        "properties": {
-          "name": "light",
-          "inputParams": [],
-          "outputParams": []
-        },
-        "children": [],
-        "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
-        "type": "action"
+        "properties": {},
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": "Turn on light"
+            },
+            "properties": {
+              "name": "light",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "light",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "45ecd121-bbb0-4d8d-a215-74567df267ad",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": "EXPLODE !"
+            },
+            "properties": {
+              "name": "explosion",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "00f825a6-6b10-4612-ac84-309bbf59e95c",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "light",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "1893161f-f507-439c-abb1-75b74c60197d",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "light",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "b5682384-a6b2-47e6-b58d-a751e760d076",
+            "type": "action"
+          }
+        ],
+        "id": "15a6ad41-ba5a-4b4a-a42b-c327612f61b2",
+        "type": "sequence"
       }
     ],
     "id": "e26e990f-766a-4834-bd97-a2e594335d65"
