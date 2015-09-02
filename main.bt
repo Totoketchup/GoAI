@@ -11,38 +11,28 @@
       {
         "activated": true,
         "metadata": {
-          "label": ""
+          "label": "Sequence"
         },
         "properties": {},
         "children": [
           {
             "activated": true,
             "metadata": {
-              "label": "Turn on light"
+              "label": "Someone entering"
             },
             "properties": {
-              "name": "light",
-              "inputParams": [
+              "name": "",
+              "inputParams": [],
+              "outputParams": [
                 {
-                  "key": "name",
-                  "type": "string",
-                  "value": "Blue Light"
-                },
-                {
-                  "key": "height",
-                  "type": "integer",
-                  "value": "50"
-                },
-                {
-                  "key": "nice",
-                  "type": "boolean",
-                  "value": "false"
+                  "key": "result",
+                  "type": "entityKnowledge",
+                  "value": "people"
                 }
-              ],
-              "outputParams": []
+              ]
             },
             "children": [],
-            "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
+            "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
             "type": "action"
           },
           {
@@ -50,110 +40,66 @@
             "metadata": {
               "label": ""
             },
-            "properties": {
-              "name": "light",
-              "inputParams": [
-                {
-                  "key": "name",
-                  "type": "string",
-                  "value": "Red"
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Is Someone in the room ?"
                 },
-                {
-                  "key": "height",
-                  "type": "integer",
-                  "value": "10"
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op": "=="
                 },
-                {
-                  "key": "nice",
-                  "type": "boolean",
-                  "value": "false"
-                }
-              ],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "45ecd121-bbb0-4d8d-a215-74567df267ad",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": "EXPLODE !"
-            },
-            "properties": {
-              "name": "explosion",
-              "inputParams": [
-                {
-                  "key": "charge",
-                  "type": "integer",
-                  "value": "500"
-                }
-              ],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "00f825a6-6b10-4612-ac84-309bbf59e95c",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {
-              "name": "light",
-              "inputParams": [
-                {
-                  "key": "name",
-                  "type": "string",
-                  "value": "Yellow"
+                "children": [],
+                "id": "9a85107c-f391-478d-833f-0ac124698314",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Turn on light"
                 },
-                {
-                  "key": "height",
-                  "type": "integer",
-                  "value": "80"
+                "properties": {
+                  "name": "light",
+                  "inputParams": [
+                    {
+                      "key": "name",
+                      "type": "string",
+                      "value": "Blue Light"
+                    },
+                    {
+                      "key": "height",
+                      "type": "integer",
+                      "value": "50"
+                    },
+                    {
+                      "key": "nice",
+                      "type": "boolean",
+                      "value": "false"
+                    }
+                  ],
+                  "outputParams": [
+                    {
+                      "type": "entityKnowledge",
+                      "value": ""
+                    }
+                  ]
                 },
-                {
-                  "key": "nice",
-                  "type": "boolean",
-                  "value": "true"
-                }
-              ],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "1893161f-f507-439c-abb1-75b74c60197d",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {
-              "name": "light",
-              "inputParams": [
-                {
-                  "key": "name",
-                  "type": "string",
-                  "value": "Pink"
-                },
-                {
-                  "key": "height",
-                  "type": "integer",
-                  "value": "70"
-                },
-                {
-                  "key": "nice",
-                  "type": "boolean",
-                  "value": "false"
-                }
-              ],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "b5682384-a6b2-47e6-b58d-a751e760d076",
-            "type": "action"
+                "children": [],
+                "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
+                "type": "action"
+              }
+            ],
+            "id": "1cf91acd-8a00-453f-8287-69016e3b5d37",
+            "type": "sequence"
           }
         ],
         "id": "15a6ad41-ba5a-4b4a-a42b-c327612f61b2",
