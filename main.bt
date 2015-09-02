@@ -11,9 +11,11 @@
       {
         "activated": true,
         "metadata": {
-          "label": "Sequence"
+          "label": ""
         },
-        "properties": {},
+        "properties": {
+          "active": "false"
+        },
         "children": [
           {
             "activated": true,
@@ -97,8 +99,8 @@
             "type": "action"
           }
         ],
-        "id": "15a6ad41-ba5a-4b4a-a42b-c327612f61b2",
-        "type": "sequence"
+        "id": "aa3d6da0-0e63-46f6-8705-2c191608b4f0",
+        "type": "priority"
       }
     ],
     "id": "e26e990f-766a-4834-bd97-a2e594335d65"
