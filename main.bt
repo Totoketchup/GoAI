@@ -20,67 +20,6 @@
           {
             "activated": true,
             "metadata": {
-              "label": ""
-            },
-            "properties": {},
-            "children": [
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Is Someone in the room ?"
-                },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "people"
-                  },
-                  "op2": {
-                    "type": "integer",
-                    "value": "0"
-                  },
-                  "op": ">"
-                },
-                "children": [],
-                "id": "9a85107c-f391-478d-833f-0ac124698314",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Turn on Light"
-                },
-                "properties": {
-                  "name": "light",
-                  "inputParams": [
-                    {
-                      "key": "name",
-                      "type": "string",
-                      "value": "Red lamp"
-                    },
-                    {
-                      "key": "height",
-                      "type": "integer",
-                      "value": "50"
-                    },
-                    {
-                      "key": "nice",
-                      "type": "boolean",
-                      "value": "true"
-                    }
-                  ],
-                  "outputParams": []
-                },
-                "children": [],
-                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
-                "type": "action"
-              }
-            ],
-            "id": "1cf91acd-8a00-453f-8287-69016e3b5d37",
-            "type": "sequence"
-          },
-          {
-            "activated": true,
-            "metadata": {
               "label": "RANDOM"
             },
             "properties": {},
@@ -139,11 +78,11 @@
                       ]
                     },
                     "children": [],
-                    "id": "1374895b-4e18-423a-b96c-4555fefc43e9",
+                    "id": "67ef4387-0941-4dc8-9a73-57030856ff10",
                     "type": "action"
                   }
                 ],
-                "id": "227ee06c-6b81-480e-b126-ff16476a7208",
+                "id": "fc663881-8e92-4742-8660-16a30baa32de",
                 "type": "condition"
               },
               {
@@ -180,16 +119,77 @@
                       ]
                     },
                     "children": [],
-                    "id": "67ef4387-0941-4dc8-9a73-57030856ff10",
+                    "id": "1374895b-4e18-423a-b96c-4555fefc43e9",
                     "type": "action"
                   }
                 ],
-                "id": "fc663881-8e92-4742-8660-16a30baa32de",
+                "id": "227ee06c-6b81-480e-b126-ff16476a7208",
                 "type": "condition"
               }
             ],
             "id": "65472f03-1a1a-46f0-8c55-121e0658df16",
             "type": "random"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Is Someone in the room ?"
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "0"
+                  },
+                  "op": ">"
+                },
+                "children": [],
+                "id": "9a85107c-f391-478d-833f-0ac124698314",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Turn on Light"
+                },
+                "properties": {
+                  "name": "light",
+                  "inputParams": [
+                    {
+                      "key": "name",
+                      "type": "string",
+                      "value": "Red lamp"
+                    },
+                    {
+                      "key": "height",
+                      "type": "integer",
+                      "value": "50"
+                    },
+                    {
+                      "key": "nice",
+                      "type": "boolean",
+                      "value": "true"
+                    }
+                  ],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
+                "type": "action"
+              }
+            ],
+            "id": "1cf91acd-8a00-453f-8287-69016e3b5d37",
+            "type": "sequence"
           }
         ],
         "id": "aa3d6da0-0e63-46f6-8705-2c191608b4f0",
