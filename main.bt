@@ -22,7 +22,23 @@
             },
             "properties": {
               "name": "light",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "key": "name",
+                  "type": "string",
+                  "value": "Blue Light"
+                },
+                {
+                  "key": "height",
+                  "type": "integer",
+                  "value": "50"
+                },
+                {
+                  "key": "nice",
+                  "type": "boolean",
+                  "value": "false"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
@@ -36,7 +52,23 @@
             },
             "properties": {
               "name": "light",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "key": "name",
+                  "type": "string",
+                  "value": "Red"
+                },
+                {
+                  "key": "height",
+                  "type": "integer",
+                  "value": "10"
+                },
+                {
+                  "key": "nice",
+                  "type": "boolean",
+                  "value": "false"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
@@ -50,7 +82,13 @@
             },
             "properties": {
               "name": "explosion",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "key": "charge",
+                  "type": "integer",
+                  "value": "500"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
@@ -64,7 +102,23 @@
             },
             "properties": {
               "name": "light",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "key": "name",
+                  "type": "string",
+                  "value": "Yellow"
+                },
+                {
+                  "key": "height",
+                  "type": "integer",
+                  "value": "80"
+                },
+                {
+                  "key": "nice",
+                  "type": "boolean",
+                  "value": "true"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
@@ -78,7 +132,23 @@
             },
             "properties": {
               "name": "light",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "key": "name",
+                  "type": "string",
+                  "value": "Pink"
+                },
+                {
+                  "key": "height",
+                  "type": "integer",
+                  "value": "70"
+                },
+                {
+                  "key": "nice",
+                  "type": "boolean",
+                  "value": "false"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
