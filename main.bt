@@ -65,7 +65,7 @@
               {
                 "activated": true,
                 "metadata": {
-                  "label": "Turn on light"
+                  "label": "Turn on Light"
                 },
                 "properties": {
                   "name": "light",
@@ -73,7 +73,7 @@
                     {
                       "key": "name",
                       "type": "string",
-                      "value": "Blue Light"
+                      "value": "Red lamp"
                     },
                     {
                       "key": "height",
@@ -83,18 +83,13 @@
                     {
                       "key": "nice",
                       "type": "boolean",
-                      "value": "false"
+                      "value": "true"
                     }
                   ],
-                  "outputParams": [
-                    {
-                      "type": "entityKnowledge",
-                      "value": ""
-                    }
-                  ]
+                  "outputParams": []
                 },
                 "children": [],
-                "id": "013757ea-bf1c-4c65-b74b-12ff51d67bf2",
+                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
                 "type": "action"
               }
             ],
