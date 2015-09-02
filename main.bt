@@ -73,6 +73,26 @@
                 "children": [],
                 "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
                 "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "explosion",
+                  "inputParams": [
+                    {
+                      "key": "charge",
+                      "type": "string",
+                      "value": "512"
+                    }
+                  ],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "99d0966b-2f1b-4c9e-8446-9dc19b806825",
+                "type": "action"
               }
             ],
             "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
