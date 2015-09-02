@@ -153,106 +153,120 @@
             "metadata": {
               "label": ""
             },
-            "properties": {},
-            "children": [
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Is Someone in the room ?"
-                },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "people"
-                  },
-                  "op2": {
-                    "type": "integer",
-                    "value": "0"
-                  },
-                  "op": ">"
-                },
-                "children": [],
-                "id": "9a85107c-f391-478d-833f-0ac124698314",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Turn on Light"
-                },
-                "properties": {
-                  "name": "light",
-                  "inputParams": [
-                    {
-                      "key": "name",
-                      "type": "string",
-                      "value": "Red lamp"
-                    },
-                    {
-                      "key": "height",
-                      "type": "integer",
-                      "value": "50"
-                    },
-                    {
-                      "key": "nice",
-                      "type": "boolean",
-                      "value": "true"
-                    }
-                  ],
-                  "outputParams": []
-                },
-                "children": [],
-                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
-                "type": "action"
-              }
-            ],
-            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
-            "type": "sequence"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
+            "properties": {
+              "statusCondition": "succeedsIfAnySucceeds",
+              "retryPolicy": "propagateToRunning"
             },
-            "properties": {},
             "children": [
               {
                 "activated": true,
                 "metadata": {
                   "label": ""
                 },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "people"
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Is Someone in the room ?"
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "people"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "0"
+                      },
+                      "op": ">"
+                    },
+                    "children": [],
+                    "id": "9a85107c-f391-478d-833f-0ac124698314",
+                    "type": "condition"
                   },
-                  "op2": {
-                    "type": "integer",
-                    "value": "0"
-                  },
-                  "op": "=="
-                },
-                "children": [],
-                "id": "0c15c235-17f0-4ec7-84b6-4fe37dd176a6",
-                "type": "condition"
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Turn on Light"
+                    },
+                    "properties": {
+                      "name": "light",
+                      "inputParams": [
+                        {
+                          "key": "name",
+                          "type": "string",
+                          "value": "Red lamp"
+                        },
+                        {
+                          "key": "height",
+                          "type": "integer",
+                          "value": "50"
+                        },
+                        {
+                          "key": "nice",
+                          "type": "boolean",
+                          "value": "true"
+                        }
+                      ],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
+                    "type": "action"
+                  }
+                ],
+                "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
+                "type": "sequence"
               },
               {
                 "activated": true,
                 "metadata": {
-                  "label": "Turn Off Light"
+                  "label": ""
                 },
-                "properties": {
-                  "name": "lightoff",
-                  "inputParams": [],
-                  "outputParams": []
-                },
-                "children": [],
-                "id": "287b4623-1f42-4857-874b-9baae43ad071",
-                "type": "action"
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "people"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "0"
+                      },
+                      "op": "=="
+                    },
+                    "children": [],
+                    "id": "0c15c235-17f0-4ec7-84b6-4fe37dd176a6",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Turn Off Light"
+                    },
+                    "properties": {
+                      "name": "lightoff",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "287b4623-1f42-4857-874b-9baae43ad071",
+                    "type": "action"
+                  }
+                ],
+                "id": "a50e2760-d13c-47d3-89cf-ff53aa50991b",
+                "type": "sequence"
               }
             ],
-            "id": "a50e2760-d13c-47d3-89cf-ff53aa50991b",
-            "type": "sequence"
+            "id": "fbbb2e0c-6c61-45ce-99f7-97469f934783",
+            "type": "parallel"
           }
         ],
         "id": "e1c35714-7bcf-40b0-adb7-d76f596ccc64",
