@@ -13,264 +13,88 @@
         "metadata": {
           "label": ""
         },
-        "properties": {},
+        "properties": {
+          "active": "false"
+        },
         "children": [
           {
             "activated": true,
             "metadata": {
-              "label": "RANDOM"
+              "label": ""
             },
             "properties": {},
             "children": [
               {
                 "activated": true,
                 "metadata": {
-                  "label": "Someone entering"
+                  "label": "Is Someone in the room ?"
                 },
                 "properties": {
-                  "name": "enter",
-                  "inputParams": [],
-                  "outputParams": [
-                    {
-                      "key": "result",
-                      "type": "entityKnowledge",
-                      "value": "people"
-                    }
-                  ]
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "0"
+                  },
+                  "op": ">"
                 },
                 "children": [],
-                "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
+                "id": "9a85107c-f391-478d-833f-0ac124698314",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Turn on Light"
+                },
+                "properties": {
+                  "name": "light",
+                  "inputParams": [
+                    {
+                      "key": "name",
+                      "type": "string",
+                      "value": "Red lamp"
+                    },
+                    {
+                      "key": "height",
+                      "type": "integer",
+                      "value": "50"
+                    },
+                    {
+                      "key": "nice",
+                      "type": "boolean",
+                      "value": "true"
+                    }
+                  ],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
                 "type": "action"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "people"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": ">"
-                    },
-                    "children": [],
-                    "id": "fc663881-8e92-4742-8660-16a30baa32de",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "Someone exiting"
-                    },
-                    "properties": {
-                      "name": "exit",
-                      "inputParams": [],
-                      "outputParams": [
-                        {
-                          "key": "result",
-                          "type": "entityKnowledge",
-                          "value": "people"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "67ef4387-0941-4dc8-9a73-57030856ff10",
-                    "type": "action"
-                  }
-                ],
-                "id": "cd64130c-a902-4635-93cf-66937ca75f4b",
-                "type": "sequence"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "people"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": ">"
-                    },
-                    "children": [],
-                    "id": "227ee06c-6b81-480e-b126-ff16476a7208",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "Someone exiting"
-                    },
-                    "properties": {
-                      "name": "exit",
-                      "inputParams": [],
-                      "outputParams": [
-                        {
-                          "key": "result",
-                          "type": "entityKnowledge",
-                          "value": "people"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "1374895b-4e18-423a-b96c-4555fefc43e9",
-                    "type": "action"
-                  }
-                ],
-                "id": "d9436fc6-db99-46d8-87ab-dcb6b2f8ccee",
-                "type": "sequence"
               }
             ],
-            "id": "65472f03-1a1a-46f0-8c55-121e0658df16",
-            "type": "random"
+            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
+            "type": "sequence"
           },
           {
             "activated": true,
             "metadata": {
-              "label": ""
+              "label": "Turn Off Light"
             },
             "properties": {
-              "statusCondition": "succeedsIfAnySucceeds",
-              "retryPolicy": "propagateToRunning"
+              "name": "lightoff",
+              "inputParams": [],
+              "outputParams": []
             },
-            "children": [
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "Is Someone in the room ?"
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "people"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": ">"
-                    },
-                    "children": [],
-                    "id": "9a85107c-f391-478d-833f-0ac124698314",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "Turn on Light"
-                    },
-                    "properties": {
-                      "name": "light",
-                      "inputParams": [
-                        {
-                          "key": "name",
-                          "type": "string",
-                          "value": "Red lamp"
-                        },
-                        {
-                          "key": "height",
-                          "type": "integer",
-                          "value": "50"
-                        },
-                        {
-                          "key": "nice",
-                          "type": "boolean",
-                          "value": "true"
-                        }
-                      ],
-                      "outputParams": []
-                    },
-                    "children": [],
-                    "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
-                    "type": "action"
-                  }
-                ],
-                "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
-                "type": "sequence"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "people"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": "=="
-                    },
-                    "children": [],
-                    "id": "0c15c235-17f0-4ec7-84b6-4fe37dd176a6",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "Turn Off Light"
-                    },
-                    "properties": {
-                      "name": "lightoff",
-                      "inputParams": [],
-                      "outputParams": []
-                    },
-                    "children": [],
-                    "id": "287b4623-1f42-4857-874b-9baae43ad071",
-                    "type": "action"
-                  }
-                ],
-                "id": "a50e2760-d13c-47d3-89cf-ff53aa50991b",
-                "type": "sequence"
-              }
-            ],
-            "id": "fbbb2e0c-6c61-45ce-99f7-97469f934783",
-            "type": "parallel"
+            "children": [],
+            "id": "287b4623-1f42-4857-874b-9baae43ad071",
+            "type": "action"
           }
         ],
-        "id": "e1c35714-7bcf-40b0-adb7-d76f596ccc64",
-        "type": "sequence"
+        "id": "7ee3bcf7-dcbd-4aa1-a284-f70d23faa574",
+        "type": "priority"
       }
     ],
     "id": "e26e990f-766a-4834-bd97-a2e594335d65"
