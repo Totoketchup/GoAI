@@ -63,8 +63,6 @@ func Explosion(requestID string) {
 }
 
 
-
-
 func InitRoute(){
 
 	actions := map[string]func(string) {"light":Light, "explosion":Explosion}
@@ -94,6 +92,48 @@ func InitRoute(){
 
 		fmt.Println("The action "+key+" is routed with the function : ", fnc)
 	 }
+
+/*
+	 http.HandleFunc("/actions/light/start", func(w http.ResponseWriter, r *http.Request) {	
+			body, err := ioutil.ReadAll(r.Body)
+			if err != nil {
+	        	panic(err)
+	    	}
+	    	var f interface{}
+	    	err = json.Unmarshal(body,&f)
+	   		m := f.(map[string]interface{})
+
+	   		requestID64 := m["requestId"].(float64)	
+	   		requestID := strconv.FormatInt(int64(requestID64), 10)
+
+	   		fmt.Println("Response from the entity : ",m["entityId"].(float64))
+			Light(requestID)
+		})
+		
+	http.HandleFunc("/actions/light/cancel", func(w http.ResponseWriter, r *http.Request) {
+		Cancel()
+	})
+
+	http.HandleFunc("/actions/explosion/start", func(w http.ResponseWriter, r *http.Request) {	
+		body, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+        	panic(err)
+    	}
+    	var f interface{}
+    	err = json.Unmarshal(body,&f)
+   		m := f.(map[string]interface{})
+
+   		requestID64 := m["requestId"].(float64)	
+   		requestID := strconv.FormatInt(int64(requestID64), 10)
+
+   		fmt.Println("Response from the entity : ",m["entityId"].(float64))
+		Explosion(requestID)
+	})
+	
+	http.HandleFunc("/actions/explosion/cancel", func(w http.ResponseWriter, r *http.Request) {
+		Cancel()
+	})
+*/
 
 }
 
@@ -295,12 +335,8 @@ func main() {
 
 	go initServer()
 
-	c := time.Tick(500 * time.Millisecond)
-    for _ = range c {
-    }
-
 	// INIT INFO
-/*
+
 	user = "Totoketchup"
 	project = "GoAI"
 	version = "master"
@@ -331,7 +367,7 @@ func main() {
 	DeleteInstance()
 	fmt.Println("")
 	
-*/
+
 }
 
 
