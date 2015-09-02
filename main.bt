@@ -35,10 +35,10 @@
                     "value": "people"
                   },
                   "op2": {
-                    "type": "boolean",
-                    "value": "true"
+                    "type": "integer",
+                    "value": "0"
                   },
-                  "op": "=="
+                  "op": ">"
                 },
                 "children": [],
                 "id": "9a85107c-f391-478d-833f-0ac124698314",
@@ -81,22 +81,115 @@
           {
             "activated": true,
             "metadata": {
-              "label": "Someone entering"
+              "label": "RANDOM"
             },
-            "properties": {
-              "name": "enter",
-              "inputParams": [],
-              "outputParams": [
-                {
-                  "key": "result",
-                  "type": "entityKnowledge",
-                  "value": "people"
-                }
-              ]
-            },
-            "children": [],
-            "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
-            "type": "action"
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Someone entering"
+                },
+                "properties": {
+                  "name": "enter",
+                  "inputParams": [],
+                  "outputParams": [
+                    {
+                      "key": "result",
+                      "type": "entityKnowledge",
+                      "value": "people"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "0"
+                  },
+                  "op": ">"
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Someone exiting"
+                    },
+                    "properties": {
+                      "name": "exit",
+                      "inputParams": [],
+                      "outputParams": [
+                        {
+                          "key": "result",
+                          "type": "entityKnowledge",
+                          "value": "people"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "1374895b-4e18-423a-b96c-4555fefc43e9",
+                    "type": "action"
+                  }
+                ],
+                "id": "227ee06c-6b81-480e-b126-ff16476a7208",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "0"
+                  },
+                  "op": ">"
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Someone exiting"
+                    },
+                    "properties": {
+                      "name": "exit",
+                      "inputParams": [],
+                      "outputParams": [
+                        {
+                          "key": "result",
+                          "type": "entityKnowledge",
+                          "value": "people"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "67ef4387-0941-4dc8-9a73-57030856ff10",
+                    "type": "action"
+                  }
+                ],
+                "id": "fc663881-8e92-4742-8660-16a30baa32de",
+                "type": "condition"
+              }
+            ],
+            "id": "65472f03-1a1a-46f0-8c55-121e0658df16",
+            "type": "random"
           }
         ],
         "id": "aa3d6da0-0e63-46f6-8705-2c191608b4f0",
