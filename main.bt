@@ -47,18 +47,28 @@
                 "metadata": {
                   "label": ""
                 },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "people"
-                  },
-                  "op2": {
-                    "type": "integer",
-                    "value": "0"
-                  },
-                  "op": ">"
-                },
+                "properties": {},
                 "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "people"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "0"
+                      },
+                      "op": ">"
+                    },
+                    "children": [],
+                    "id": "fc663881-8e92-4742-8660-16a30baa32de",
+                    "type": "condition"
+                  },
                   {
                     "activated": true,
                     "metadata": {
@@ -80,26 +90,36 @@
                     "type": "action"
                   }
                 ],
-                "id": "fc663881-8e92-4742-8660-16a30baa32de",
-                "type": "condition"
+                "id": "cd64130c-a902-4635-93cf-66937ca75f4b",
+                "type": "sequence"
               },
               {
                 "activated": true,
                 "metadata": {
                   "label": ""
                 },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "people"
-                  },
-                  "op2": {
-                    "type": "integer",
-                    "value": "0"
-                  },
-                  "op": ">"
-                },
+                "properties": {},
                 "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "people"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "0"
+                      },
+                      "op": ">"
+                    },
+                    "children": [],
+                    "id": "227ee06c-6b81-480e-b126-ff16476a7208",
+                    "type": "condition"
+                  },
                   {
                     "activated": true,
                     "metadata": {
@@ -121,8 +141,8 @@
                     "type": "action"
                   }
                 ],
-                "id": "227ee06c-6b81-480e-b126-ff16476a7208",
-                "type": "condition"
+                "id": "d9436fc6-db99-46d8-87ab-dcb6b2f8ccee",
+                "type": "sequence"
               }
             ],
             "id": "65472f03-1a1a-46f0-8c55-121e0658df16",
@@ -186,7 +206,52 @@
                 "type": "action"
               }
             ],
-            "id": "1cf91acd-8a00-453f-8287-69016e3b5d37",
+            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
+            "type": "sequence"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "people"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "0"
+                  },
+                  "op": ">"
+                },
+                "children": [],
+                "id": "0c15c235-17f0-4ec7-84b6-4fe37dd176a6",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Turn Off Light"
+                },
+                "properties": {
+                  "name": "lightoff",
+                  "inputParams": [],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "287b4623-1f42-4857-874b-9baae43ad071",
+                "type": "action"
+              }
+            ],
+            "id": "a50e2760-d13c-47d3-89cf-ff53aa50991b",
             "type": "sequence"
           }
         ],
