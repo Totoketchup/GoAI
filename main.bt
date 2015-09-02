@@ -18,26 +18,6 @@
           {
             "activated": true,
             "metadata": {
-              "label": "Someone entering"
-            },
-            "properties": {
-              "name": "enter",
-              "inputParams": [],
-              "outputParams": [
-                {
-                  "key": "result",
-                  "type": "entityKnowledge",
-                  "value": "people"
-                }
-              ]
-            },
-            "children": [],
-            "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
               "label": ""
             },
             "properties": {},
@@ -54,7 +34,7 @@
                   },
                   "op2": {
                     "type": "boolean",
-                    "value": "false"
+                    "value": "true"
                   },
                   "op": "=="
                 },
@@ -95,6 +75,26 @@
             ],
             "id": "1cf91acd-8a00-453f-8287-69016e3b5d37",
             "type": "sequence"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": "Someone entering"
+            },
+            "properties": {
+              "name": "enter",
+              "inputParams": [],
+              "outputParams": [
+                {
+                  "key": "result",
+                  "type": "entityKnowledge",
+                  "value": "people"
+                }
+              ]
+            },
+            "children": [],
+            "id": "fcb47c04-dd76-4b23-99e3-e4664cd3fcaf",
+            "type": "action"
           }
         ],
         "id": "15a6ad41-ba5a-4b4a-a42b-c327612f61b2",
