@@ -230,7 +230,7 @@
                     "type": "integer",
                     "value": "0"
                   },
-                  "op": ">"
+                  "op": "=="
                 },
                 "children": [],
                 "id": "0c15c235-17f0-4ec7-84b6-4fe37dd176a6",
