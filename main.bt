@@ -67,6 +67,26 @@
               {
                 "activated": true,
                 "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "light"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "b7bfd190-6990-4ee6-97d7-c36b3a28cb27",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
                   "label": "Turn on Light"
                 },
                 "properties": {
@@ -93,26 +113,6 @@
                 "children": [],
                 "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
                 "type": "action"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {
-                  "name": "explosion",
-                  "inputParams": [
-                    {
-                      "key": "charge",
-                      "type": "string",
-                      "value": "512"
-                    }
-                  ],
-                  "outputParams": []
-                },
-                "children": [],
-                "id": "99d0966b-2f1b-4c9e-8446-9dc19b806825",
-                "type": "action"
               }
             ],
             "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
@@ -121,16 +121,47 @@
           {
             "activated": true,
             "metadata": {
-              "label": "Turn Off Light"
+              "label": ""
             },
-            "properties": {
-              "name": "lightoff",
-              "inputParams": [],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "287b4623-1f42-4857-874b-9baae43ad071",
-            "type": "action"
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "light"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "a382ea23-febf-4dd0-b33a-8a4da03bbce0",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Turn Off Light"
+                },
+                "properties": {
+                  "name": "lightoff",
+                  "inputParams": [],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "287b4623-1f42-4857-874b-9baae43ad071",
+                "type": "action"
+              }
+            ],
+            "id": "f060ff74-cccd-4503-ae5b-596b6c3808a0",
+            "type": "sequence"
           }
         ],
         "id": "7ee3bcf7-dcbd-4aa1-a284-f70d23faa574",
