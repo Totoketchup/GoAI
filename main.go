@@ -12,7 +12,6 @@ import (
 	"strconv"
 	//"os/exec"
 	"encoding/json"
-	"math/rand"
 )
 
 
@@ -24,6 +23,7 @@ import (
 	// Change this structure if you want another initialization
 	type KnowledgeJSON struct {
 		People int `json:"people"`
+		Light bool `json:"light"`
 	} 
 
 	//Structure used for creating a new entity
@@ -38,6 +38,14 @@ import (
 		Url string `json:"url"`
 	}
 
+	type DetectPeopleOutput struct {
+		People int `json:"peopleValue"`
+	}
+
+	type LightOutput struct {
+		Light bool `json:"light"`
+	}
+
 	
 
 	// INFO
@@ -49,6 +57,9 @@ import (
 
 	var sysou bool
 
+	// ENVIRONEMENT VARIABLES
+	var people int
+	var light bool
 
 
 // REQUEST
@@ -67,9 +78,12 @@ func Request(requestType string, url string,JSONbody interface{}) []byte {
     defer resp.Body.Close()
    	body, _ := ioutil.ReadAll(resp.Body)
     if(sysou){
+    	fmt.Println("HTTP REQUEST :", request.URL)
+    	fmt.Println("JSON REQUEST :", JSONbody)
 	    fmt.Println("response Status:", resp.Status)
 	    fmt.Println("response Headers:", resp.Header)
 	    fmt.Println("response Body:", string(body))
+	   	fmt.Println("")
 	}
 	return body 
 }
@@ -82,7 +96,7 @@ func CreateInstance(user string, project string, version string){
 
 // Creates an entity and return its ID
 func CreateEntity() string{
-	subm := KnowledgeJSON{People:0}
+	subm := KnowledgeJSON{People:0,Light:false}
 	m := Entity{Behavior:"main.bt",Knowledge:subm}
 	body := Request("PUT",httpURL + "/" + instanceID + "/entities",m)
 	return string(body)
@@ -94,7 +108,7 @@ func RegisterAction(actionID string,ngrok_url string){
 	Request("PUT", httpURL + "/" + instanceID + "/actions",m)
 }
 
-func sendSuccess(requestID string, output string){
+func sendSuccess(requestID string, output interface{}){
 	Request("POST", httpURL + "/" + instanceID + "/actions/" + requestID + "/success", output)
 }
 
@@ -111,6 +125,7 @@ func UpdateGlobalKnowledge(know JSON){
 }
 
 func UpdateCraft(){
+	fmt.Println("UPDATE PEOPLE ", people)
 	Request("POST",httpURL + "/" + instanceID + "/update",`{"time":"0.5","ts":` + strconv.FormatInt(time.Now().Unix(),10) +`}`)
 }
 
@@ -132,30 +147,22 @@ func getEntityKnowledge(entityID string) JSON{
 // ACTIONS FUNCTION
 
 func Light(requestID string, input JSON) {
-	fmt.Println("Light On !! (start)")
-//	fmt.Println("My name is ", input["name"])
-//	fmt.Println("My height is ", input["height"])
-
-/*	var nice string
-	if(input["nice"].(bool)){
-		nice = "YES"
-	} else {
-		nice ="NO"
-	}
-
-	fmt.Println("Am I nice ?! ", nice)*/
-  	sendSuccess(requestID,"{}")
+	fmt.Println("Light On !!")
+	light = true
+	m := LightOutput{Light:light}
+  	sendSuccess(requestID,m)
 }
 
 func LightOff(requestID string, input JSON) {
 	fmt.Println("Light Off !!")
-  	sendSuccess(requestID,"{}")
+	light = false
+	m := LightOutput{Light:light}
+  	sendSuccess(requestID,m)
 }
 
-func Explosion(requestID string, input JSON) {
-	fmt.Println("EXPLOSION !! (start)")
-	//fmt.Println("My charge is ", input["charge"])
-	sendSuccess(requestID,"{}")
+func DetectPeople(requestID string, input JSON) {	
+	m := DetectPeopleOutput{People:people}
+	sendSuccess(requestID,m)
 }
 
 func Cancel(requestID string) {
@@ -164,14 +171,12 @@ func Cancel(requestID string) {
 }
 
 
-
-
-
-
 func initServer(){
 	InitRoute()
+
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
+
 
 func InitNgrok() string{
 	/*fmt.Println("Launch Ngrok :")
@@ -225,12 +230,12 @@ func HandleCTRL_C(){
 	}()
 }
 
-func RandomHumanInteraction(entityID string){
-	c := time.Tick(1000 * time.Millisecond)
+/*func RandomHumanInteraction(entityID string){
+	c := time.Tick(3000 * time.Millisecond)
     for _ = range c {
     	r := rand.Intn(10)
     	knowledge := getEntityKnowledge(entityID) // Get the entity Knowledge to modify the number of people in the room
-    	people := knowledge["people"].(float64)
+    	people = int64(knowledge["people"].(float64))
     	if r <4 {
     		fmt.Println("A man is entering")
     		people++;
@@ -240,15 +245,8 @@ func RandomHumanInteraction(entityID string){
     			people--;
     		}
     	}
-
-    	fmt.Println("Total of men : ",people)
-
-    	peopleKnowledge := make(JSON)
-    	peopleKnowledge["people"] = people
-
-    	UpdateEntityKnowledge(entityID,peopleKnowledge)
     }
-}
+}*/
 
 func InitRoute(){
 	for key, fnc := range actions {
@@ -285,6 +283,54 @@ func InitRoute(){
 
 		fmt.Println("The action "+key+" is routed with the function : ", fnc)
 	}
+
+
+	http.HandleFunc("/people", 
+    	func(w http.ResponseWriter, r *http.Request) {
+    		body, err := ioutil.ReadAll(r.Body)
+			if err != nil {panic(err)}
+
+		    var f interface{}
+		    err = json.Unmarshal(body,&f)
+		   	m := f.(map[string]interface{})
+
+		   	people, _ = strconv.Atoi(m["people"].(string))
+
+		   	fmt.Println("PEOPLE = ",people)
+    })
+
+    http.HandleFunc("/get/light", 
+    	func(w http.ResponseWriter, r *http.Request) {
+    		w.Header().Set("content-type", "application/json; charset=utf-8");
+
+    		lightJSON := make(JSON)
+    		lightJSON["light"] = light
+
+    		jsonStr, _ := json.Marshal(lightJSON)
+
+    		w.Write(jsonStr)
+    })
+
+    http.HandleFunc("/post/light", 
+    	func(w http.ResponseWriter, r *http.Request) {
+    		body, err := ioutil.ReadAll(r.Body)
+			if err != nil {panic(err)}
+
+		    var f interface{}
+		    err = json.Unmarshal(body,&f)
+		   	m := f.(map[string]interface{})
+
+		   	light, _ = m["light"].(bool)
+
+		   	lightJSON := make(JSON)
+    		lightJSON["light"] = light
+		   	UpdateEntityKnowledge("0",lightJSON)
+    })
+
+    http.HandleFunc("/static/", func(w http.ResponseWriter, r *http.Request) {
+    	http.ServeFile(w, r, r.URL.Path[1:])
+	})
+
 }
 
 
@@ -302,7 +348,7 @@ func main() {
 	TUTO_APP_ID = "MgYR67znmswahjlzW4MY"
 	TUTO_APP_SECRET = "qjoenA2CXNdco1VXAQncOLCS7zpW9uqeuFNxGXtu"
 	httpURL = "https://runtime.craft.ai/api/v1/" + user + "/" + project + "/" + version
-	actions = map[string]ActionFunction {"light": Light, "explosion": Explosion, "lightoff": LightOff}
+	actions = map[string]ActionFunction {"light": Light, "detectPeople": DetectPeople, "lightoff": LightOff}
 	
 
 	ngrok_url := InitNgrok()
@@ -311,7 +357,7 @@ func main() {
 	fmt.Println("")
 
 	entityID := CreateEntity();
-	fmt.Println("")
+	fmt.Println("EntityID = ",entityID)
 
 	for key, _ := range actions {
 		RegisterAction(key,ngrok_url)
@@ -319,9 +365,9 @@ func main() {
 
 	HandleCTRL_C()
 
-	go RandomHumanInteraction(entityID);
+	//go RandomHumanInteraction(entityID);
 
-    c := time.Tick(500 * time.Millisecond)
+    c := time.Tick(100 * time.Millisecond)
     for _ = range c {
     	UpdateCraft()
     }

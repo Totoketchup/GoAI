@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<title>GoAI</title>
+</head>
+<body>
+
+<div>
+  	Number of People : <input type="text" name="people" id="input">
+	<button id="submit" onclick="submit()"> Submit</button>
+	<button onclick="go()"> Start</button>
+	<button onclick="stop()"> Stop</button>
+
+	<img src="images/light_off.png" id="light">
+	<img src="images/switch_off.png" onclick="switchlamp()" id="switch">
+
+</div>
+	<script type="text/javascript">
+
+	var start = false
+	var light = false
+	function submit(){
+		var people = document.getElementById("input").value
+		var oReq = new XMLHttpRequest();
+		oReq.open('POST', "http://localhost:8000/people", true);
+		oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
+		var j = {};
+		j["people"] = people;
+		oReq.send(JSON.stringify(j));
+	}
+
+	function go(){
+		start = true;
+	}
+
+	function switchlamp(){
+
+		if(light){
+			light = false;
+		} else {
+			light = true;
+		}
+		var oReq = new XMLHttpRequest();
+		oReq.open('POST', "http://localhost:8000/post/light", true);
+		oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
+		var j = {};
+		j["light"] = light;
+		oReq.send(JSON.stringify(j));
+	}
+
+	function stop(){
+		start = false
+	}
+
+	function update(){
+		if(start){
+			var oReq = new XMLHttpRequest();
+			oReq.open('GET', "http://localhost:8000/get/light", false);
+			oReq.onreadystatechange = function() { 
+	        if (oReq.readyState == 4 && oReq.status == 200)
+	            callback(oReq.responseText);
+	    	}
+			oReq.send(null);
+		}
+	}
+
+	function callback(responseText){
+    		var j = JSON.parse(responseText);
+    		if(j["light"]){
+    			light =true
+    			document.getElementById("light").src = "images/light_on.png";
+    			document.getElementById("switch").src = "images/switch_on.png";
+    		} else {
+    			light =false
+    			document.getElementById("light").src = "images/light_off.png";
+    			document.getElementById("switch").src = "images/switch_off.png";
+    		}
+    		console.log(j);
+	}
+
+	idUpdate = setInterval(update, 20);
+
+	</script>
+
+</body>
+</html>
