@@ -13,9 +13,7 @@
         "metadata": {
           "label": ""
         },
-        "properties": {
-          "active": "false"
-        },
+        "properties": {},
         "children": [
           {
             "activated": true,
@@ -164,8 +162,8 @@
             "type": "sequence"
           }
         ],
-        "id": "7ee3bcf7-dcbd-4aa1-a284-f70d23faa574",
-        "type": "priority"
+        "id": "7e029fdf-d6e3-48a3-b522-399daf0e3cf9",
+        "type": "sequence"
       }
     ],
     "id": "e26e990f-766a-4834-bd97-a2e594335d65"
