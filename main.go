@@ -16,31 +16,45 @@ import (
 )
 
 
-	//TYPES
+//JSON STRUCTRURE
+	type JSON map[string]interface {}
+	type ActionFunction func(string, JSON) // func(entityID,input:'json')
+	
+	// Structure used for setting an knowledge in the creation of an entity
+	// Change this structure if you want another initialization
+	type KnowledgeJSON struct {
+		People int `json:"people"`
+	} 
 
-	type ActionFunction func(string, map[string]interface{}) // func(entityID,input:'json')
+	//Structure used for creating a new entity
+	type Entity struct {
+		Behavior string `json:"behavior"`
+		Knowledge KnowledgeJSON `json:"knowledge"`
+	}
 
-	type Knowledge map[string]interface {}
+	//Structure used for registering an action
+	type ActionJSON struct {
+		Name string `json:"name"`
+		Url string `json:"url"`
+	}
+
+	
 
 	// INFO
-	
-	var user string
-	var project string
-	var version string
 	var TUTO_APP_ID string
 	var TUTO_APP_SECRET string
 	var httpURL string
 	var instanceID string
-	var ngrok_url string
 	var actions map[string]ActionFunction
 
 	var sysou bool
 
 
 
+// REQUEST
+
 func Request(requestType string, url string,JSONbody interface{}) []byte {
 	jsonStr, err := json.Marshal(JSONbody)
-
 	request, err := http.NewRequest(requestType, url, bytes.NewBuffer(jsonStr))
 	if err != nil {panic(err)}
 	request.Header.Set("content-type", "application/json; charset=utf-8");
@@ -60,6 +74,26 @@ func Request(requestType string, url string,JSONbody interface{}) []byte {
 	return body 
 }
 
+// Creates an instance
+func CreateInstance(user string, project string, version string){
+	body := Request("PUT",httpURL + "?" + "scope=app","")
+	instanceID = string(body);
+}
+
+// Creates an entity and return its ID
+func CreateEntity() string{
+	subm := KnowledgeJSON{People:0}
+	m := Entity{Behavior:"main.bt",Knowledge:subm}
+	body := Request("PUT",httpURL + "/" + instanceID + "/entities",m)
+	return string(body)
+}
+
+//Register an action 
+func RegisterAction(actionID string,ngrok_url string){
+	m := ActionJSON{Name:actionID,Url:ngrok_url+"/actions/"+ actionID +"/"}
+	Request("PUT", httpURL + "/" + instanceID + "/actions",m)
+}
+
 func sendSuccess(requestID string, output string){
 	Request("POST", httpURL + "/" + instanceID + "/actions/" + requestID + "/success", output)
 }
@@ -68,8 +102,36 @@ func sendCancel(requestID string){
 	Request("POST", httpURL + "/" + instanceID + "/actions/" + requestID + "/cancelation", "")
 }
 
+func UpdateEntityKnowledge(entityID string, know JSON) {
+	Request("POST",httpURL + "/" + instanceID + "/entities/" + entityID + "/knowledge", know)
+}
 
-func Light(requestID string, input map[string]interface{}) {
+func UpdateGlobalKnowledge(know JSON){
+	Request("POST", httpURL + "/" + instanceID + "/knowledge", know)
+}
+
+func UpdateCraft(){
+	Request("POST",httpURL + "/" + instanceID + "/update",`{"time":"0.5","ts":` + strconv.FormatInt(time.Now().Unix(),10) +`}`)
+}
+
+// Delete an instance with its ID
+func DeleteInstance(){
+    Request("DELETE",httpURL + "/" + instanceID, "")
+}
+
+func getEntityKnowledge(entityID string) JSON{
+   	body :=	Request("GET", httpURL + "/" + instanceID + "/entities/" + entityID + "/knowledge", "")
+   	var f interface{}
+    err := json.Unmarshal(body,&f)
+    if err != nil {panic(err)}
+   	m := f.(map[string]interface{})
+   	return m
+}
+
+
+// ACTIONS FUNCTION
+
+func Light(requestID string, input JSON) {
 	fmt.Println("Light On !! (start)")
 //	fmt.Println("My name is ", input["name"])
 //	fmt.Println("My height is ", input["height"])
@@ -85,12 +147,12 @@ func Light(requestID string, input map[string]interface{}) {
   	sendSuccess(requestID,"{}")
 }
 
-func LightOff(requestID string, input map[string]interface{}) {
+func LightOff(requestID string, input JSON) {
 	fmt.Println("Light Off !!")
   	sendSuccess(requestID,"{}")
 }
 
-func Explosion(requestID string, input map[string]interface{}) {
+func Explosion(requestID string, input JSON) {
 	fmt.Println("EXPLOSION !! (start)")
 	//fmt.Println("My charge is ", input["charge"])
 	sendSuccess(requestID,"{}")
@@ -101,31 +163,17 @@ func Cancel(requestID string) {
 	sendCancel(requestID)
 }
 
-func getEntityKnowledge(entityID string) map[string]interface{}{
-   	body :=	Request("GET", httpURL + "/" + instanceID + "/entities/" + entityID + "/knowledge", "")
-   	var f interface{}
-    err := json.Unmarshal(body,&f)
-    if err != nil {panic(err)}
-   	m := f.(map[string]interface{})
-   	return m
-}
 
-func UpdateEntityKnowledge(entityID string, know Knowledge) {
-	Request("POST",httpURL + "/" + instanceID + "/entities/" + entityID + "/knowledge", know)
-}
 
-func UpdateGlobalKnowledge(know Knowledge){
-	Request("POST", httpURL + "/" + instanceID + "/knowledge", know)
-}
+
 
 
 func initServer(){
 	InitRoute()
-
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 
-func InitNgrok(){
+func InitNgrok() string{
 	/*fmt.Println("Launch Ngrok :")
 	parts := strings.Fields("ngrok http 8000")
 	head := parts[0]
@@ -157,54 +205,12 @@ func InitNgrok(){
     tunnels := m["tunnels"].([]interface{})
     tunnels_0 := tunnels[0].(map[string]interface{})
 
-    ngrok_url = tunnels_0["public_url"].(string)
+    return tunnels_0["public_url"].(string)
 }
 
 
-// Create an instance
-func CreateInstance(user string, project string, version string){
-	body := Request("PUT",httpURL + "?" + "scope=app","")
-	instanceID = string(body);
-} 
-
-type KnowledgeJSON struct {
-	People int `json:"people"`
-}
-
-type Entity struct {
-	Behavior string `json:"behavior"`
-	Knowledge KnowledgeJSON `json:"knowledge"`
-}
-
-//Creates an entity and return its ID
-func CreateEntity() string{
-	subm := KnowledgeJSON{People:0}
-	m := Entity{Behavior:"main.bt",Knowledge:subm}
-	body := Request("PUT",httpURL + "/" + instanceID + "/entities",m)
-	return string(body)
-}
 
 
-func UpdateCraft(){
-	Request("POST",httpURL + "/" + instanceID + "/update",`{"time":"0.5","ts":` + strconv.FormatInt(time.Now().Unix(),10) +`}`)
-}
-
-
-type ActionJSON struct {
-	Name string `json:"name"`
-	Url string `json:"url"`
-}
-//Register an action 
-func RegisterAction(actionID string){
-	m := ActionJSON{Name:actionID,Url:ngrok_url+"/actions/"+ actionID +"/"}
-	Request("PUT", httpURL + "/" + instanceID + "/actions",m)
-}
-
-
-// Delete an instance with its ID
-func DeleteInstance(){
-    Request("DELETE",httpURL + "/" + instanceID, "")
-}
 
 func HandleCTRL_C(){
 	// CTRL C HANDLING
@@ -237,48 +243,42 @@ func RandomHumanInteraction(entityID string){
 
     	fmt.Println("Total of men : ",people)
 
-    	peopleKnowledge := make(Knowledge)
+    	peopleKnowledge := make(JSON)
     	peopleKnowledge["people"] = people
 
     	UpdateEntityKnowledge(entityID,peopleKnowledge)
-    	fmt.Println("")
     }
 }
 
 func InitRoute(){
 	for key, fnc := range actions {
-		key := key
-		fnc := fnc
+		key := key 
+		fnc := fnc // <- Memorize the action name and its function, 
     	http.HandleFunc("/actions/"+key+"/start", 
     		func(w http.ResponseWriter, r *http.Request) {
 				body, err := ioutil.ReadAll(r.Body)
-				if err != nil {
-		        	panic(err)
-		    	}
+				if err != nil {panic(err)}
+
 		    	var f interface{}
 		    	err = json.Unmarshal(body,&f)
 		   		m := f.(map[string]interface{})
 
-		   		requestID64 := m["requestId"].(float64)	
-		   		requestID := strconv.FormatInt(int64(requestID64), 10)
-
+		   		requestIDf64 := m["requestId"].(float64)	
+		   		requestID := strconv.FormatInt(int64(requestIDf64), 10)
 		   		input := m["input"].(map[string]interface{})
-
-		   		//fmt.Println("Response from the entity : ",m["entityId"].(float64))
 				fnc(requestID,input)
 			})
 		
 		http.HandleFunc("/actions/"+key+"/cancel", func(w http.ResponseWriter, r *http.Request) {
 			body, err := ioutil.ReadAll(r.Body)
-			if err != nil {
-	        	panic(err)
-	    	}
+			if err != nil {panic(err)}
+
 	    	var f interface{}
 	    	err = json.Unmarshal(body,&f)
 	   		m := f.(map[string]interface{})
 
-	   		requestID64 := m["requestId"].(float64)	
-	   		requestID := strconv.FormatInt(int64(requestID64), 10)
+	   		requestIDf64 := m["requestId"].(float64)	
+	   		requestID := strconv.FormatInt(int64(requestIDf64), 10)
 			Cancel(requestID)
 		})
 
@@ -292,23 +292,21 @@ func main() {
 
 	go initServer()
 
-	// INIT INFO
-
-	user = "Totoketchup"
-	project = "GoAI"
-	version = "master"
-	TUTO_APP_ID = "MgYR67znmswahjlzW4MY"
-	TUTO_APP_SECRET = "qjoenA2CXNdco1VXAQncOLCS7zpW9uqeuFNxGXtu"
-	httpURL = "https://runtime.craft.ai/api/v1/" + user + "/" + project + "/" + version
-
 	// PARAM
 	sysou = false
 
+	// INIT INFO
+	user := "Totoketchup"
+	project := "GoAI"
+	version := "master"
+	TUTO_APP_ID = "MgYR67znmswahjlzW4MY"
+	TUTO_APP_SECRET = "qjoenA2CXNdco1VXAQncOLCS7zpW9uqeuFNxGXtu"
+	httpURL = "https://runtime.craft.ai/api/v1/" + user + "/" + project + "/" + version
 	actions = map[string]ActionFunction {"light": Light, "explosion": Explosion, "lightoff": LightOff}
+	
 
-	go InitNgrok()
+	ngrok_url := InitNgrok()
 
-	fmt.Println("")
 	CreateInstance(user, project, version)
 	fmt.Println("")
 
@@ -316,7 +314,7 @@ func main() {
 	fmt.Println("")
 
 	for key, _ := range actions {
-		RegisterAction(key)
+		RegisterAction(key,ngrok_url)
 	}
 
 	HandleCTRL_C()
@@ -326,13 +324,10 @@ func main() {
     c := time.Tick(500 * time.Millisecond)
     for _ = range c {
     	UpdateCraft()
-    	fmt.Println("")
     }
 
 	DeleteInstance()
 	fmt.Println("")
-	
-
 }
 
 
