@@ -70,55 +70,68 @@
                   "label": ""
                 },
                 "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "light"
-                  },
-                  "op2": {
-                    "type": "boolean",
-                    "value": "false"
-                  },
-                  "op": "=="
+                  "active": "false"
                 },
-                "children": [],
-                "id": "b7bfd190-6990-4ee6-97d7-c36b3a28cb27",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Turn on Light"
-                },
-                "properties": {
-                  "name": "light",
-                  "inputParams": [
-                    {
-                      "key": "name",
-                      "type": "string",
-                      "value": "Red lamp"
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
                     },
-                    {
-                      "key": "height",
-                      "type": "integer",
-                      "value": "50"
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "light"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op": "=="
                     },
-                    {
-                      "key": "nice",
-                      "type": "boolean",
-                      "value": "true"
-                    }
-                  ],
-                  "outputParams": [
-                    {
-                      "key": "light",
-                      "type": "entityKnowledge",
-                      "value": "light"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
-                "type": "action"
+                    "children": [],
+                    "id": "b7bfd190-6990-4ee6-97d7-c36b3a28cb27",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Turn on Light"
+                    },
+                    "properties": {
+                      "name": "light",
+                      "inputParams": [
+                        {
+                          "key": "name",
+                          "type": "string",
+                          "value": "Red lamp"
+                        },
+                        {
+                          "key": "height",
+                          "type": "integer",
+                          "value": "50"
+                        },
+                        {
+                          "key": "nice",
+                          "type": "boolean",
+                          "value": "true"
+                        }
+                      ],
+                      "outputParams": [
+                        {
+                          "key": "light",
+                          "type": "entityKnowledge",
+                          "value": "light"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "c50284aa-38f6-4f3e-810a-bc7255421b8d",
+                    "type": "action"
+                  }
+                ],
+                "id": "b6119629-1788-47e8-937d-8358528d69b9",
+                "type": "priority"
               }
             ],
             "id": "a3bf212e-9659-41d4-be29-17e58d404f10",
@@ -129,51 +142,40 @@
             "metadata": {
               "label": ""
             },
-            "properties": {},
-            "children": [
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "light"
-                  },
-                  "op2": {
-                    "type": "boolean",
-                    "value": "true"
-                  },
-                  "op": "=="
-                },
-                "children": [],
-                "id": "a382ea23-febf-4dd0-b33a-8a4da03bbce0",
-                "type": "condition"
+            "properties": {
+              "op1": {
+                "type": "entityKnowledge",
+                "value": "light"
               },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Turn Off Light"
-                },
-                "properties": {
-                  "name": "lightoff",
-                  "inputParams": [],
-                  "outputParams": [
-                    {
-                      "key": "light",
-                      "type": "entityKnowledge",
-                      "value": "light"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "287b4623-1f42-4857-874b-9baae43ad071",
-                "type": "action"
-              }
-            ],
-            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
-            "type": "sequence"
+              "op2": {
+                "type": "boolean",
+                "value": "false"
+              },
+              "op": "=="
+            },
+            "children": [],
+            "id": "a382ea23-febf-4dd0-b33a-8a4da03bbce0",
+            "type": "condition"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": "Turn Off Light"
+            },
+            "properties": {
+              "name": "lightoff",
+              "inputParams": [],
+              "outputParams": [
+                {
+                  "key": "light",
+                  "type": "entityKnowledge",
+                  "value": "light"
+                }
+              ]
+            },
+            "children": [],
+            "id": "287b4623-1f42-4857-874b-9baae43ad071",
+            "type": "action"
           }
         ],
         "id": "8cafd704-8aa8-4aae-bb91-d26ff63ccbef",
