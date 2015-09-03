@@ -34,7 +34,7 @@
                   "inputParams": [],
                   "outputParams": [
                     {
-                      "key": "people",
+                      "key": "peopleValue",
                       "type": "entityKnowledge",
                       "value": "people"
                     }
