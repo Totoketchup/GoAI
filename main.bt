@@ -27,6 +27,26 @@
               {
                 "activated": true,
                 "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "detectPeople",
+                  "inputParams": [],
+                  "outputParams": [
+                    {
+                      "key": "people",
+                      "type": "entityKnowledge",
+                      "value": "people"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "3d45de80-3fb6-4350-bdb1-f6c3e5ab3039",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
                   "label": "Is Someone in the room ?"
                 },
                 "properties": {
