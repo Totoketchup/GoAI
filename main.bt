@@ -43,18 +43,7 @@
                 "children": [],
                 "id": "3d45de80-3fb6-4350-bdb1-f6c3e5ab3039",
                 "type": "action"
-              }
-            ],
-            "id": "11d54495-2450-47f4-9ae2-35dd4cc59ad8",
-            "type": "not"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {},
-            "children": [
+              },
               {
                 "activated": true,
                 "metadata": {
@@ -126,7 +115,7 @@
                 "type": "action"
               }
             ],
-            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
+            "id": "a3bf212e-9659-41d4-be29-17e58d404f10",
             "type": "sequence"
           },
           {
@@ -171,7 +160,7 @@
                 "type": "action"
               }
             ],
-            "id": "f060ff74-cccd-4503-ae5b-596b6c3808a0",
+            "id": "1fce57f5-0fe0-41b0-a7c7-afcb8b57cf1f",
             "type": "sequence"
           }
         ],
