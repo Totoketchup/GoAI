@@ -91,7 +91,12 @@ func Request(requestType string, url string,JSONbody interface{}) []byte {
 // Creates an instance
 func CreateInstance(user string, project string, version string){
 	body := Request("PUT",httpURL + "?" + "scope=app","")
-	instanceID = string(body);
+	var f interface{}
+    err := json.Unmarshal(body,&f)
+    if err != nil {panic(err)}
+   	m := f.(map[string]interface {})
+   	instance := m["instance"].(map[string]interface {})
+	instanceID = instance["instance_id"].(string);
 }
 
 // Creates an entity and return its ID
@@ -99,7 +104,13 @@ func CreateEntity() string{
 	subm := KnowledgeJSON{People:0,Light:false}
 	m := Entity{Behavior:"main.bt",Knowledge:subm}
 	body := Request("PUT",httpURL + "/" + instanceID + "/entities",m)
-	return string(body)
+		var f interface{}
+    err := json.Unmarshal(body,&f)
+    if err != nil {panic(err)}
+   	j := f.(map[string]interface {})
+   	entity := j["entity"].(map[string]interface {})
+	entityId := strconv.FormatInt(int64(entity["id"].(float64)), 10)
+	return entityId
 }
 
 //Register an action 
