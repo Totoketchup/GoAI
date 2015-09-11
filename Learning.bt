@@ -21,7 +21,7 @@
           {
             "activated": true,
             "metadata": {
-              "label": "REACTIONER"
+              "label": "REACTIONER (Call the CBR if any change)"
             },
             "properties": {
               "name": "",
@@ -37,7 +37,9 @@
             "metadata": {
               "label": ""
             },
-            "properties": {},
+            "properties": {
+              "active": "false"
+            },
             "children": [
               {
                 "activated": true,
@@ -62,22 +64,63 @@
               {
                 "activated": true,
                 "metadata": {
-                  "label": ""
+                  "label": "If the BT succeed"
                 },
-                "properties": {
-                  "behavior": {
-                    "type": "uriPath",
-                    "value": "main.bt"
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "behavior": {
+                        "type": "uriPath",
+                        "value": "main.bt"
+                      },
+                      "inputParams": []
+                    },
+                    "children": [],
+                    "id": "b9e68b76-e56f-422d-ae9d-a2448d627c1d",
+                    "type": "embedded"
                   },
-                  "inputParams": []
-                },
-                "children": [],
-                "id": "b9e68b76-e56f-422d-ae9d-a2448d627c1d",
-                "type": "embedded"
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Send the new knowledge to the Case Based Reasoning"
+                    },
+                    "properties": {
+                      "name": "",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "3a1d4317-287d-4a3b-95d8-3826295c6c12",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "destination": "BTActive",
+                      "op": {
+                        "type": "boolean",
+                        "value": "false"
+                      }
+                    },
+                    "children": [],
+                    "id": "0b5fb93e-efc0-487a-92e1-19c4b3dd1aca",
+                    "type": "set"
+                  }
+                ],
+                "id": "b45fdca1-c05b-4bab-81aa-06e51c5e66cd",
+                "type": "sequence"
               }
             ],
-            "id": "b8039585-1fef-4455-8f17-ee2316c83b76",
-            "type": "sequence"
+            "id": "6a8b336f-e47c-4329-91f9-3fd61a286f1e",
+            "type": "priority"
           }
         ],
         "id": "7141ae6c-8234-4498-aeea-dc202a2c0431",
