@@ -13,12 +13,15 @@
         "metadata": {
           "label": ""
         },
-        "properties": {},
+        "properties": {
+          "statusCondition": "failsIfAnyFails",
+          "retryPolicy": "propagateToAll"
+        },
         "children": [
           {
             "activated": true,
             "metadata": {
-              "label": "Check people"
+              "label": "REACTIONER"
             },
             "properties": {
               "name": "",
@@ -26,28 +29,8 @@
               "outputParams": []
             },
             "children": [],
-            "id": "1d7462fe-7a9b-418b-bd62-f24bb1cfdbb8",
+            "id": "136a751a-8d7d-4ff0-93b2-2efedf838199",
             "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": "People ?"
-            },
-            "properties": {
-              "op1": {
-                "type": "entityKnowledge",
-                "value": "people"
-              },
-              "op2": {
-                "type": "integer",
-                "value": "0"
-              },
-              "op": ">"
-            },
-            "children": [],
-            "id": "c0ccec41-a098-4c65-800c-a2344ddb7c2e",
-            "type": "condition"
           },
           {
             "activated": true,
@@ -55,13 +38,34 @@
               "label": ""
             },
             "properties": {},
-            "children": [],
-            "id": "f5ff4286-a259-45be-bb0d-dfbabc13d417",
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "BTActive"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "e00e59d8-51ed-43f7-aecf-2f426cbb918e",
+                "type": "condition"
+              }
+            ],
+            "id": "b8039585-1fef-4455-8f17-ee2316c83b76",
             "type": "sequence"
           }
         ],
-        "id": "5a19dbe4-d2dc-4db5-a77d-c2657cd62d10",
-        "type": "sequence"
+        "id": "7141ae6c-8234-4498-aeea-dc202a2c0431",
+        "type": "parallel"
       }
     ],
     "id": "8a89eba8-bfbe-47f9-98b1-fcca5cccfc67"
