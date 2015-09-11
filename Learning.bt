@@ -87,20 +87,6 @@
                   {
                     "activated": true,
                     "metadata": {
-                      "label": "Send the new knowledge to the Case Based Reasoning"
-                    },
-                    "properties": {
-                      "name": "",
-                      "inputParams": [],
-                      "outputParams": []
-                    },
-                    "children": [],
-                    "id": "3a1d4317-287d-4a3b-95d8-3826295c6c12",
-                    "type": "action"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
                       "label": ""
                     },
                     "properties": {
