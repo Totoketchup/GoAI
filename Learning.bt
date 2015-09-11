@@ -18,18 +18,46 @@
           {
             "activated": true,
             "metadata": {
-              "label": ""
+              "label": "Check people"
             },
             "properties": {
-              "behavior": {
-                "type": "uriPath",
-                "value": ""
-              },
-              "inputParams": []
+              "name": "",
+              "inputParams": [],
+              "outputParams": []
             },
             "children": [],
-            "id": "d0e1a1cd-49d9-44ab-ab50-946d46429748",
-            "type": "embedded"
+            "id": "1d7462fe-7a9b-418b-bd62-f24bb1cfdbb8",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": "People ?"
+            },
+            "properties": {
+              "op1": {
+                "type": "entityKnowledge",
+                "value": "people"
+              },
+              "op2": {
+                "type": "integer",
+                "value": "0"
+              },
+              "op": ">"
+            },
+            "children": [],
+            "id": "c0ccec41-a098-4c65-800c-a2344ddb7c2e",
+            "type": "condition"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [],
+            "id": "f5ff4286-a259-45be-bb0d-dfbabc13d417",
+            "type": "sequence"
           }
         ],
         "id": "5a19dbe4-d2dc-4db5-a77d-c2657cd62d10",
