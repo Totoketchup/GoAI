@@ -58,6 +58,22 @@
                 "children": [],
                 "id": "e00e59d8-51ed-43f7-aecf-2f426cbb918e",
                 "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "behavior": {
+                    "type": "uriPath",
+                    "value": "main.bt"
+                  },
+                  "inputParams": []
+                },
+                "children": [],
+                "id": "b9e68b76-e56f-422d-ae9d-a2448d627c1d",
+                "type": "embedded"
               }
             ],
             "id": "b8039585-1fef-4455-8f17-ee2316c83b76",
