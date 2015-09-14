@@ -21,7 +21,7 @@
           {
             "activated": true,
             "metadata": {
-              "label": "REACTIONER (Call the CBR if any change)"
+              "label": "CHECKER (Call the CBR if any change)"
             },
             "properties": {
               "name": "",
@@ -35,7 +35,7 @@
           {
             "activated": true,
             "metadata": {
-              "label": ""
+              "label": "CBR"
             },
             "properties": {
               "active": "false"
@@ -44,65 +44,44 @@
               {
                 "activated": true,
                 "metadata": {
-                  "label": ""
+                  "label": "Solution 1"
                 },
                 "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "BTActive"
-                  },
-                  "op2": {
-                    "type": "boolean",
-                    "value": "false"
-                  },
-                  "op": "=="
+                  "name": "",
+                  "inputParams": [],
+                  "outputParams": []
                 },
                 "children": [],
-                "id": "e00e59d8-51ed-43f7-aecf-2f426cbb918e",
-                "type": "condition"
+                "id": "3a7914ba-7905-46e3-b99a-eb70b3d22609",
+                "type": "action"
               },
               {
                 "activated": true,
                 "metadata": {
-                  "label": "If the BT succeed"
+                  "label": "Solution 2"
                 },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "behavior": {
-                        "type": "uriPath",
-                        "value": "main.bt"
-                      },
-                      "inputParams": []
-                    },
-                    "children": [],
-                    "id": "b9e68b76-e56f-422d-ae9d-a2448d627c1d",
-                    "type": "embedded"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "destination": "BTActive",
-                      "op": {
-                        "type": "boolean",
-                        "value": "false"
-                      }
-                    },
-                    "children": [],
-                    "id": "0b5fb93e-efc0-487a-92e1-19c4b3dd1aca",
-                    "type": "set"
-                  }
-                ],
-                "id": "b45fdca1-c05b-4bab-81aa-06e51c5e66cd",
-                "type": "sequence"
+                "properties": {
+                  "name": "",
+                  "inputParams": [],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "7c02596f-f212-411d-90f5-23057eb8ca00",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Solution 3"
+                },
+                "properties": {
+                  "name": "",
+                  "inputParams": [],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "f9171716-67a4-4a4f-afbc-75a24952952b",
+                "type": "action"
               }
             ],
             "id": "6a8b336f-e47c-4329-91f9-3fd61a286f1e",
