@@ -25,7 +25,12 @@
             },
             "properties": {
               "name": "",
-              "inputParams": [],
+              "inputParams": [
+                {
+                  "type": "string",
+                  "value": ""
+                }
+              ],
               "outputParams": []
             },
             "children": [],
@@ -35,57 +40,88 @@
           {
             "activated": true,
             "metadata": {
-              "label": "CBR"
+              "label": ""
             },
-            "properties": {
-              "active": "false"
-            },
+            "properties": {},
             "children": [
               {
                 "activated": true,
                 "metadata": {
-                  "label": "Solution 1"
+                  "label": ""
                 },
                 "properties": {
-                  "name": "",
-                  "inputParams": [],
-                  "outputParams": []
+                  "op1": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
                 },
                 "children": [],
-                "id": "3a7914ba-7905-46e3-b99a-eb70b3d22609",
-                "type": "action"
+                "id": "a0306066-2c97-49ef-842d-fd29801fe318",
+                "type": "condition"
               },
               {
                 "activated": true,
                 "metadata": {
-                  "label": "Solution 2"
+                  "label": "CBR"
                 },
                 "properties": {
-                  "name": "",
-                  "inputParams": [],
-                  "outputParams": []
+                  "active": "false"
                 },
-                "children": [],
-                "id": "7c02596f-f212-411d-90f5-23057eb8ca00",
-                "type": "action"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Solution 3"
-                },
-                "properties": {
-                  "name": "",
-                  "inputParams": [],
-                  "outputParams": []
-                },
-                "children": [],
-                "id": "f9171716-67a4-4a4f-afbc-75a24952952b",
-                "type": "action"
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Solution 1"
+                    },
+                    "properties": {
+                      "name": "",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "3a7914ba-7905-46e3-b99a-eb70b3d22609",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Solution 2"
+                    },
+                    "properties": {
+                      "name": "",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "7c02596f-f212-411d-90f5-23057eb8ca00",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Solution 3"
+                    },
+                    "properties": {
+                      "name": "",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "f9171716-67a4-4a4f-afbc-75a24952952b",
+                    "type": "action"
+                  }
+                ],
+                "id": "6a8b336f-e47c-4329-91f9-3fd61a286f1e",
+                "type": "priority"
               }
             ],
-            "id": "6a8b336f-e47c-4329-91f9-3fd61a286f1e",
-            "type": "priority"
+            "id": "92774adc-9d12-4920-b5a8-2454bb0a9f39",
+            "type": "sequence"
           }
         ],
         "id": "7141ae6c-8234-4498-aeea-dc202a2c0431",
