@@ -22,7 +22,7 @@
               "label": "GET TIME"
             },
             "properties": {
-              "name": "",
+              "name": "time",
               "inputParams": [],
               "outputParams": [
                 {
