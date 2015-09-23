@@ -14,12 +14,220 @@
         "metadata": {
           "label": ""
         },
-        "properties": {
-          "active": "false"
-        },
-        "children": [],
-        "id": "7de7e726-6ec1-47f9-a534-884e66f5aba4",
-        "type": "priority"
+        "properties": {},
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": "GET TIME"
+            },
+            "properties": {
+              "name": "",
+              "inputParams": [],
+              "outputParams": [
+                {
+                  "key": "time",
+                  "type": "entityKnowledge",
+                  "value": "time"
+                }
+              ]
+            },
+            "children": [],
+            "id": "e053bdd3-2100-46bb-9649-648255cbc581",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "active": "false"
+            },
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "time"
+                      },
+                      "op2": {
+                        "type": "real",
+                        "value": "21"
+                      },
+                      "op": "<="
+                    },
+                    "children": [],
+                    "id": "0adfe55e-c514-4299-b456-6560eb9be45e",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "time"
+                      },
+                      "op2": {
+                        "type": "real",
+                        "value": "6"
+                      },
+                      "op": ">="
+                    },
+                    "children": [],
+                    "id": "b5c2b4bc-3fa5-4a8e-b39e-0840908524e7",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "blinds"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op": "=="
+                    },
+                    "children": [],
+                    "id": "74120e55-0dea-4167-9368-fd516803c83a",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Open Blinds"
+                    },
+                    "properties": {
+                      "name": "blindsOpen",
+                      "inputParams": [],
+                      "outputParams": [
+                        {
+                          "key": "blinds",
+                          "type": "entityKnowledge",
+                          "value": "blinds"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "b3927e13-4336-4d69-aa08-bae0a31e94db",
+                    "type": "action"
+                  }
+                ],
+                "id": "22d4a428-03f9-4d49-a268-557b2e49e5b0",
+                "type": "sequence"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op": "=="
+                    },
+                    "children": [],
+                    "id": "af79eb35-7e04-46df-b64f-13025f110bbb",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "true"
+                      },
+                      "op": "=="
+                    },
+                    "children": [],
+                    "id": "93544a2d-6165-49fe-b98e-5a829687ebfb",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "blinds"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "false"
+                      },
+                      "op": "=="
+                    },
+                    "children": [],
+                    "id": "c5083f83-e58a-4938-a85c-a7a121efd526",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Close Blinds"
+                    },
+                    "properties": {
+                      "name": "",
+                      "inputParams": [],
+                      "outputParams": []
+                    },
+                    "children": [],
+                    "id": "02c1af28-2f93-4a3e-818f-de648edcb746",
+                    "type": "action"
+                  }
+                ],
+                "id": "d0f47fa2-8b8d-4be1-afa6-7bda12268d2a",
+                "type": "sequence"
+              }
+            ],
+            "id": "a8e6af08-9042-436d-9a81-05bc28e8c062",
+            "type": "priority"
+          }
+        ],
+        "id": "3125c804-454d-4e29-b4ad-0a59b33173c3",
+        "type": "sequence"
       }
     ],
     "id": "33b5f7a9-bd8e-4553-a042-010fa36dd6c7"
