@@ -150,14 +150,14 @@
                     },
                     "properties": {
                       "op1": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "entityKnowledge",
+                        "value": "time"
                       },
                       "op2": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "real",
+                        "value": "21"
                       },
-                      "op": "=="
+                      "op": ">"
                     },
                     "children": [],
                     "id": "af79eb35-7e04-46df-b64f-13025f110bbb",
@@ -170,14 +170,14 @@
                     },
                     "properties": {
                       "op1": {
-                        "type": "boolean",
+                        "type": "entityKnowledge",
                         "value": "true"
                       },
                       "op2": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "real",
+                        "value": "6"
                       },
-                      "op": "=="
+                      "op": "<"
                     },
                     "children": [],
                     "id": "93544a2d-6165-49fe-b98e-5a829687ebfb",
