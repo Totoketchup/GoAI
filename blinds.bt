@@ -209,9 +209,15 @@
                       "label": "Close Blinds"
                     },
                     "properties": {
-                      "name": "",
+                      "name": "blindsClose",
                       "inputParams": [],
-                      "outputParams": []
+                      "outputParams": [
+                        {
+                          "key": "blinds",
+                          "type": "entityKnowledge",
+                          "value": "blinds"
+                        }
+                      ]
                     },
                     "children": [],
                     "id": "02c1af28-2f93-4a3e-818f-de648edcb746",
