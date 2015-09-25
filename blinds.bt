@@ -149,39 +149,52 @@
                       "label": ""
                     },
                     "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "time"
-                      },
-                      "op2": {
-                        "type": "real",
-                        "value": "21"
-                      },
-                      "op": ">"
+                      "active": "false"
                     },
-                    "children": [],
-                    "id": "af79eb35-7e04-46df-b64f-13025f110bbb",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "true"
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "op1": {
+                            "type": "entityKnowledge",
+                            "value": "time"
+                          },
+                          "op2": {
+                            "type": "real",
+                            "value": "21"
+                          },
+                          "op": ">"
+                        },
+                        "children": [],
+                        "id": "af79eb35-7e04-46df-b64f-13025f110bbb",
+                        "type": "condition"
                       },
-                      "op2": {
-                        "type": "real",
-                        "value": "6"
-                      },
-                      "op": "<"
-                    },
-                    "children": [],
-                    "id": "93544a2d-6165-49fe-b98e-5a829687ebfb",
-                    "type": "condition"
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "op1": {
+                            "type": "entityKnowledge",
+                            "value": "true"
+                          },
+                          "op2": {
+                            "type": "real",
+                            "value": "6"
+                          },
+                          "op": "<"
+                        },
+                        "children": [],
+                        "id": "93544a2d-6165-49fe-b98e-5a829687ebfb",
+                        "type": "condition"
+                      }
+                    ],
+                    "id": "e7682479-03f9-40aa-a1f7-ca3556839470",
+                    "type": "priority"
                   },
                   {
                     "activated": true,
