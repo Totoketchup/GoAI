@@ -180,7 +180,7 @@
                         "properties": {
                           "op1": {
                             "type": "entityKnowledge",
-                            "value": "true"
+                            "value": "time"
                           },
                           "op2": {
                             "type": "real",
