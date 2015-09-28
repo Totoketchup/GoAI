@@ -24,13 +24,70 @@
               "label": ""
             },
             "properties": {
-              "name": "",
-              "inputParams": [],
+              "name": "c50",
+              "inputParams": [
+                {
+                  "key": "room",
+                  "type": "entityKnowledge",
+                  "value": "room"
+                }
+              ],
               "outputParams": []
             },
             "children": [],
             "id": "a045c67c-f86e-4ff5-b775-282fc150459f",
             "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "fd31746f-59b7-4dc4-bf15-c214fc82a15f",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "",
+                  "inputParams": [],
+                  "outputParams": [
+                    {
+                      "key": "light",
+                      "type": "entityKnowledge",
+                      "value": "room.light"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "7a43bc91-00b9-4072-8525-5b1b02a806d9",
+                "type": "action"
+              }
+            ],
+            "id": "51476a2c-6b88-47ac-aa87-b254046cc465",
+            "type": "sequence"
           }
         ],
         "id": "c2339c84-916e-4c6b-bbe1-4d94e817313b",
