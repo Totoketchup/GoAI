@@ -117,12 +117,12 @@
                     },
                     "properties": {
                       "op1": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "entityKnowledge",
+                        "value": "action"
                       },
                       "op2": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "integer",
+                        "value": "1"
                       },
                       "op": "=="
                     },
@@ -133,10 +133,10 @@
                   {
                     "activated": true,
                     "metadata": {
-                      "label": ""
+                      "label": "LIGHT"
                     },
                     "properties": {
-                      "name": "",
+                      "name": "light",
                       "inputParams": [],
                       "outputParams": []
                     },
