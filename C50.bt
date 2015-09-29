@@ -34,6 +34,7 @@
               ],
               "outputParams": [
                 {
+                  "key": "action",
                   "type": "entityKnowledge",
                   "value": ""
                 },
