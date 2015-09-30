@@ -337,12 +337,18 @@
                       "value": "learning"
                     },
                     {
-                      "key": "sample",
+                      "key": "content",
                       "type": "string",
-                      "value": "sample"
+                      "value": "content"
                     }
                   ],
-                  "outputParams": []
+                  "outputParams": [
+                    {
+                      "key": "learning",
+                      "type": "entityKnowledge",
+                      "value": "learning"
+                    }
+                  ]
                 },
                 "children": [],
                 "id": "10d6ff9c-d377-46bc-b64f-35f03b5e69dd",
