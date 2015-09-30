@@ -35,7 +35,7 @@
                   },
                   "op2": {
                     "type": "boolean",
-                    "value": "true"
+                    "value": "false"
                   },
                   "op": "=="
                 },
