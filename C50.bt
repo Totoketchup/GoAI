@@ -355,7 +355,7 @@
                   "label": "LEARN"
                 },
                 "properties": {
-                  "name": "",
+                  "name": "learn",
                   "inputParams": [
                     {
                       "key": "learning",
