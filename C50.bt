@@ -19,11 +19,9 @@
           {
             "activated": true,
             "metadata": {
-              "label": "Check Loading"
+              "label": ""
             },
-            "properties": {
-              "active": "false"
-            },
+            "properties": {},
             "children": [
               {
                 "activated": true,
@@ -41,60 +39,61 @@
                   },
                   "op": "=="
                 },
-                "children": [],
-                "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
                 "children": [
                   {
                     "activated": true,
                     "metadata": {
                       "label": ""
                     },
-                    "properties": {
-                      "name": "load",
-                      "inputParams": [],
-                      "outputParams": [
-                        {
-                          "key": "learning",
-                          "type": "entityKnowledge",
-                          "value": "learning"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
-                    "type": "action"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "destination": "loaded",
-                      "op": {
-                        "type": "boolean",
-                        "value": "true"
+                    "properties": {},
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "name": "load",
+                          "inputParams": [],
+                          "outputParams": [
+                            {
+                              "key": "learning",
+                              "type": "entityKnowledge",
+                              "value": "learning"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                        "type": "action"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "destination": "loaded",
+                          "op": {
+                            "type": "boolean",
+                            "value": "true"
+                          }
+                        },
+                        "children": [],
+                        "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
+                        "type": "set"
                       }
-                    },
-                    "children": [],
-                    "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
-                    "type": "set"
+                    ],
+                    "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
+                    "type": "sequence"
                   }
                 ],
-                "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
-                "type": "sequence"
+                "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
+                "type": "condition"
               }
             ],
-            "id": "040e181f-c06a-4aaa-af0b-397aa7e44cea",
-            "type": "priority"
+            "id": "1c0400b4-2eb9-4b13-88b8-18a315080e3e",
+            "type": "success"
           },
           {
             "activated": true,
@@ -174,41 +173,11 @@
                   },
                   "op2": {
                     "type": "integer",
-                    "value": "-1"
+                    "value": "0"
                   },
                   "op": "=="
                 },
-                "children": [],
-                "id": "9c82c883-1101-4bf7-9edd-41365feec247",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {},
                 "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "action"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": "=="
-                    },
-                    "children": [],
-                    "id": "9f35f201-2b7f-4965-a811-d32f0ce47216",
-                    "type": "condition"
-                  },
                   {
                     "activated": true,
                     "metadata": {
@@ -230,36 +199,26 @@
                     "type": "action"
                   }
                 ],
-                "id": "b3310317-6eca-4081-8a0b-e2746bc46450",
-                "type": "sequence"
+                "id": "9f35f201-2b7f-4965-a811-d32f0ce47216",
+                "type": "condition"
               },
               {
                 "activated": true,
                 "metadata": {
                   "label": ""
                 },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "action"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "1"
-                      },
-                      "op": "=="
-                    },
-                    "children": [],
-                    "id": "c73810e2-eb81-4ae3-a1ee-0a3b5d1fe17a",
-                    "type": "condition"
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "action"
                   },
+                  "op2": {
+                    "type": "integer",
+                    "value": "1"
+                  },
+                  "op": "=="
+                },
+                "children": [
                   {
                     "activated": true,
                     "metadata": {
@@ -281,8 +240,8 @@
                     "type": "action"
                   }
                 ],
-                "id": "82472b1a-8204-4198-8ea6-aa388a325194",
-                "type": "sequence"
+                "id": "c73810e2-eb81-4ae3-a1ee-0a3b5d1fe17a",
+                "type": "condition"
               }
             ],
             "id": "a53618bb-cc76-44c2-a63b-bd56dde5e8fa",
