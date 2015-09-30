@@ -368,7 +368,13 @@
                       "value": "content"
                     }
                   ],
-                  "outputParams": []
+                  "outputParams": [
+                    {
+                      "key": "learning",
+                      "type": "entityKnowledge",
+                      "value": "learning"
+                    }
+                  ]
                 },
                 "children": [],
                 "id": "d6355f00-ca3b-4424-989f-07d65f3ca884",
