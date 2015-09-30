@@ -50,20 +50,47 @@
                 "metadata": {
                   "label": ""
                 },
-                "properties": {
-                  "name": "load",
-                  "inputParams": [],
-                  "outputParams": [
-                    {
-                      "key": "loaded",
-                      "type": "entityKnowledge",
-                      "value": "loaded"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
-                "type": "action"
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "name": "load",
+                      "inputParams": [],
+                      "outputParams": [
+                        {
+                          "key": "learning",
+                          "type": "entityKnowledge",
+                          "value": "learning"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "destination": "loaded",
+                      "op": {
+                        "type": "boolean",
+                        "value": "true"
+                      }
+                    },
+                    "children": [],
+                    "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
+                    "type": "set"
+                  }
+                ],
+                "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
+                "type": "sequence"
               }
             ],
             "id": "040e181f-c06a-4aaa-af0b-397aa7e44cea",
@@ -83,7 +110,13 @@
                   "value": "status"
                 }
               ],
-              "outputParams": []
+              "outputParams": [
+                {
+                  "key": "status",
+                  "type": "entityKnowledge",
+                  "value": "status"
+                }
+              ]
             },
             "children": [],
             "id": "adcc2ebf-a41a-4cef-815b-8a84485baf6f",
