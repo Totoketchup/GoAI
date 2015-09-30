@@ -19,6 +19,26 @@
           {
             "activated": true,
             "metadata": {
+              "label": "Wait for Sensor Trigger"
+            },
+            "properties": {
+              "name": "detectPeople",
+              "inputParams": [
+                {
+                  "key": "status",
+                  "type": "entityKnowledge",
+                  "value": "status"
+                }
+              ],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "adcc2ebf-a41a-4cef-815b-8a84485baf6f",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
               "label": ""
             },
             "properties": {
@@ -86,7 +106,13 @@
                     "properties": {
                       "name": "lightoff",
                       "inputParams": [],
-                      "outputParams": []
+                      "outputParams": [
+                        {
+                          "key": "light",
+                          "type": "entityKnowledge",
+                          "value": "light"
+                        }
+                      ]
                     },
                     "children": [],
                     "id": "9dab6294-9a22-4b1f-a37e-6df1a494b6e4",
@@ -131,7 +157,13 @@
                     "properties": {
                       "name": "light",
                       "inputParams": [],
-                      "outputParams": []
+                      "outputParams": [
+                        {
+                          "key": "light",
+                          "type": "entityKnowledge",
+                          "value": "light"
+                        }
+                      ]
                     },
                     "children": [],
                     "id": "c66b0d38-9a3b-49df-a9fe-acee43ceb38b",
