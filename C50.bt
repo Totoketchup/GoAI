@@ -279,21 +279,31 @@
                   "label": ""
                 },
                 "properties": {
-                  "channel": {
-                    "type": "string",
-                    "value": "revise"
-                  },
-                  "inputParams": [
-                    {
-                      "key": "status",
-                      "type": "entityKnowledge",
-                      "value": "status"
-                    }
-                  ]
+                  "destination": "learn",
+                  "op": {
+                    "type": "boolean",
+                    "value": "true"
+                  }
                 },
                 "children": [],
-                "id": "f1d5ec29-4067-418c-bd2f-021ec988cb1a",
-                "type": "sendMessage"
+                "id": "933c596d-ba9c-4ff8-9d48-c9f61d5afd57",
+                "type": "set"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "destination": "revised",
+                  "op": {
+                    "type": "entityKnowledge",
+                    "value": "status"
+                  }
+                },
+                "children": [],
+                "id": "b207ed20-6fba-40ee-9a06-32d941d35cb3",
+                "type": "set"
               }
             ],
             "id": "3253c220-6e6a-47b6-9e31-21eae3d2f034",
@@ -312,16 +322,19 @@
                   "label": ""
                 },
                 "properties": {
-                  "channel": {
-                    "type": "string",
-                    "value": "revise"
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "learn"
                   },
-                  "sender": "",
-                  "content": "content"
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
                 },
                 "children": [],
-                "id": "0fd8a47c-ead8-4fd2-b246-48f3e771ece5",
-                "type": "receiveMessage"
+                "id": "59c3a06c-1b84-4036-9e1b-ffca03bdd115",
+                "type": "condition"
               },
               {
                 "activated": true,
@@ -332,16 +345,16 @@
                   "name": "revise",
                   "inputParams": [
                     {
-                      "key": "content",
+                      "key": "revised",
                       "type": "string",
-                      "value": "content"
+                      "value": "revised"
                     }
                   ],
                   "outputParams": [
                     {
-                      "key": "content",
+                      "key": "revised",
                       "type": "entityKnowledge",
-                      "value": "content"
+                      "value": "revised"
                     }
                   ]
                 },
