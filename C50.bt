@@ -19,6 +19,59 @@
           {
             "activated": true,
             "metadata": {
+              "label": "Check Loading"
+            },
+            "properties": {
+              "active": "false"
+            },
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "loaded"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "load",
+                  "inputParams": [],
+                  "outputParams": [
+                    {
+                      "key": "loaded",
+                      "type": "entityKnowledge",
+                      "value": "loaded"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                "type": "action"
+              }
+            ],
+            "id": "040e181f-c06a-4aaa-af0b-397aa7e44cea",
+            "type": "priority"
+          },
+          {
+            "activated": true,
+            "metadata": {
               "label": "Wait for Sensor Trigger"
             },
             "properties": {
@@ -76,6 +129,26 @@
               "active": "false"
             },
             "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "action"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "-1"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "9c82c883-1101-4bf7-9edd-41365feec247",
+                "type": "condition"
+              },
               {
                 "activated": true,
                 "metadata": {
