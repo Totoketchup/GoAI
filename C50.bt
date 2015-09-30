@@ -285,9 +285,9 @@
                   },
                   "inputParams": [
                     {
-                      "key": "sample",
+                      "key": "status",
                       "type": "entityKnowledge",
-                      "value": "sample"
+                      "value": "status"
                     }
                   ]
                 },
@@ -332,8 +332,34 @@
                   "name": "revise",
                   "inputParams": [
                     {
-                      "key": "learning",
+                      "key": "content",
                       "type": "string",
+                      "value": "content"
+                    }
+                  ],
+                  "outputParams": [
+                    {
+                      "key": "content",
+                      "type": "entityKnowledge",
+                      "value": "content"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "10d6ff9c-d377-46bc-b64f-35f03b5e69dd",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "LEARN"
+                },
+                "properties": {
+                  "name": "",
+                  "inputParams": [
+                    {
+                      "key": "learning",
+                      "type": "entityKnowledge",
                       "value": "learning"
                     },
                     {
@@ -342,16 +368,10 @@
                       "value": "content"
                     }
                   ],
-                  "outputParams": [
-                    {
-                      "key": "learning",
-                      "type": "entityKnowledge",
-                      "value": "learning"
-                    }
-                  ]
+                  "outputParams": []
                 },
                 "children": [],
-                "id": "10d6ff9c-d377-46bc-b64f-35f03b5e69dd",
+                "id": "d6355f00-ca3b-4424-989f-07d65f3ca884",
                 "type": "action"
               }
             ],
