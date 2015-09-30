@@ -48,6 +48,11 @@
                   "key": "learning",
                   "type": "entityKnowledge",
                   "value": "learning"
+                },
+                {
+                  "key": "status",
+                  "type": "entityKnowledge",
+                  "value": "status"
                 }
               ],
               "outputParams": [
