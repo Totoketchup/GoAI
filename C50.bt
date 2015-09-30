@@ -35,11 +35,6 @@
                   "key": "action",
                   "type": "entityKnowledge",
                   "value": "action"
-                },
-                {
-                  "key": "learning",
-                  "type": "entityKnowledge",
-                  "value": "learning"
                 }
               ]
             },
