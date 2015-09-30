@@ -87,7 +87,7 @@
                                 "type": "string",
                                 "value": "revise"
                               },
-                              "mode": "subscribe"
+                              "mode": "subscribeNew"
                             },
                             "children": [],
                             "id": "2ad032c1-8571-4485-9db7-44d6686448cc",
