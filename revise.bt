@@ -14,14 +14,19 @@
         "metadata": {
           "label": ""
         },
-        "properties": {},
+        "properties": {
+          "statusCondition": "failsIfAnyFails",
+          "retryPolicy": "propagateToRunning"
+        },
         "children": [
           {
             "activated": true,
             "metadata": {
               "label": ""
             },
-            "properties": {},
+            "properties": {
+              "active": "false"
+            },
             "children": [
               {
                 "activated": true,
@@ -31,7 +36,7 @@
                 "properties": {
                   "op1": {
                     "type": "entityKnowledge",
-                    "value": "subscribe"
+                    "value": "subscribed"
                   },
                   "op2": {
                     "type": "boolean",
@@ -50,17 +55,34 @@
                       {
                         "activated": true,
                         "metadata": {
-                          "label": "Create a channel"
+                          "label": ""
+                        },
+                        "properties": {
+                          "channel": {
+                            "type": "entityKnowledge",
+                            "value": "revise_channel"
+                          },
+                          "sender": "",
+                          "content": "receive_channel"
+                        },
+                        "children": [],
+                        "id": "701376b4-9e6f-48c8-9d19-d98b17f94b4d",
+                        "type": "receiveMessage"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
                         },
                         "properties": {
                           "channel": {
                             "type": "string",
-                            "value": "channel"
+                            "value": "receive_channel"
                           },
-                          "mode": "subscribeNew"
+                          "mode": "subscribe"
                         },
                         "children": [],
-                        "id": "15fe1cc3-2056-46f0-8062-72ca5aad4103",
+                        "id": "b1af6456-7418-4a33-badd-9c8ed976ae70",
                         "type": "subscribeMessage"
                       },
                       {
@@ -69,83 +91,291 @@
                           "label": ""
                         },
                         "properties": {
-                          "destination": "subscribe",
+                          "destination": "subscribed",
                           "op": {
                             "type": "boolean",
                             "value": "true"
                           }
                         },
                         "children": [],
-                        "id": "a35c4bb4-79cf-41de-8255-45e31eff286c",
+                        "id": "ead6c791-9ad7-492f-a052-c1dc956bf9db",
                         "type": "set"
                       }
                     ],
-                    "id": "a84c0730-3aab-425c-ad7b-15e72ac255b8",
+                    "id": "27d87fe1-3cbb-4455-ae58-7252d5b36868",
                     "type": "sequence"
                   }
                 ],
-                "id": "80ea2dfe-8fdc-41bf-ba9a-dcb45649bd18",
+                "id": "1b649a24-557e-437a-941d-40a97f1fc35f",
                 "type": "condition"
               }
             ],
-            "id": "3c5580c9-347e-412b-b254-06acda663f99",
-            "type": "success"
+            "id": "256c8be8-a6c8-4643-984b-04675776825d",
+            "type": "priority"
           },
           {
             "activated": true,
             "metadata": {
               "label": ""
             },
-            "properties": {
-              "channel": {
-                "type": "string",
-                "value": ""
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {},
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "loaded"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "false"
+                      },
+                      "op": "=="
+                    },
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {},
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "name": "load",
+                              "inputParams": [],
+                              "outputParams": [
+                                {
+                                  "key": "learning",
+                                  "type": "entityKnowledge",
+                                  "value": "learning"
+                                }
+                              ]
+                            },
+                            "children": [],
+                            "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                            "type": "action"
+                          },
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "destination": "loaded",
+                              "op": {
+                                "type": "boolean",
+                                "value": "true"
+                              }
+                            },
+                            "children": [],
+                            "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
+                            "type": "set"
+                          }
+                        ],
+                        "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
+                        "type": "sequence"
+                      }
+                    ],
+                    "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
+                    "type": "condition"
+                  }
+                ],
+                "id": "1c0400b4-2eb9-4b13-88b8-18a315080e3e",
+                "type": "success"
               },
-              "sender": "",
-              "content": ""
-            },
-            "children": [],
-            "id": "c9b79687-edd2-4d3b-8598-c7d4c02421eb",
-            "type": "receiveMessage"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {
-              "name": "revise",
-              "inputParams": [],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "d6d2d926-cfed-460e-8edf-6a0e749fc388",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {
-              "name": "learn",
-              "inputParams": [
-                {
-                  "type": "string",
-                  "value": ""
-                }
-              ],
-              "outputParams": []
-            },
-            "children": [],
-            "id": "dbe46ebb-f281-4b5e-bd6d-f9427d868b02",
-            "type": "action"
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Wait for Sensor Trigger"
+                },
+                "properties": {
+                  "name": "detectPeople",
+                  "inputParams": [
+                    {
+                      "key": "status",
+                      "type": "entityKnowledge",
+                      "value": "status"
+                    }
+                  ],
+                  "outputParams": [
+                    {
+                      "key": "status",
+                      "type": "entityKnowledge",
+                      "value": "status"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "adcc2ebf-a41a-4cef-815b-8a84485baf6f",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "c50",
+                  "inputParams": [
+                    {
+                      "key": "learning",
+                      "type": "entityKnowledge",
+                      "value": "learning"
+                    },
+                    {
+                      "key": "status",
+                      "type": "entityKnowledge",
+                      "value": "status"
+                    }
+                  ],
+                  "outputParams": [
+                    {
+                      "key": "action",
+                      "type": "entityKnowledge",
+                      "value": "action"
+                    }
+                  ]
+                },
+                "children": [],
+                "id": "a045c67c-f86e-4ff5-b775-282fc150459f",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "active": "false"
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "action"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "0"
+                      },
+                      "op": "=="
+                    },
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": "LIGHT OFF"
+                        },
+                        "properties": {
+                          "name": "lightoff",
+                          "inputParams": [],
+                          "outputParams": [
+                            {
+                              "key": "light",
+                              "type": "entityKnowledge",
+                              "value": "light"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "9dab6294-9a22-4b1f-a37e-6df1a494b6e4",
+                        "type": "action"
+                      }
+                    ],
+                    "id": "9f35f201-2b7f-4965-a811-d32f0ce47216",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "action"
+                      },
+                      "op2": {
+                        "type": "integer",
+                        "value": "1"
+                      },
+                      "op": "=="
+                    },
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": "LIGHT"
+                        },
+                        "properties": {
+                          "name": "light",
+                          "inputParams": [],
+                          "outputParams": [
+                            {
+                              "key": "light",
+                              "type": "entityKnowledge",
+                              "value": "light"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "c66b0d38-9a3b-49df-a9fe-acee43ceb38b",
+                        "type": "action"
+                      }
+                    ],
+                    "id": "c73810e2-eb81-4ae3-a1ee-0a3b5d1fe17a",
+                    "type": "condition"
+                  }
+                ],
+                "id": "a53618bb-cc76-44c2-a63b-bd56dde5e8fa",
+                "type": "priority"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "send the status to learn"
+                },
+                "properties": {
+                  "channel": {
+                    "type": "entityKnowledge",
+                    "value": "revise_channel"
+                  },
+                  "inputParams": []
+                },
+                "children": [],
+                "id": "0e070ff0-20d6-4a3d-9371-53b5aefcff10",
+                "type": "sendMessage"
+              }
+            ],
+            "id": "3253c220-6e6a-47b6-9e31-21eae3d2f034",
+            "type": "sequence"
           }
         ],
-        "id": "2ac0f72e-debc-4288-9974-31fe4f1e552e",
-        "type": "sequence"
+        "id": "b7865f5f-8ae4-4387-9900-b0f5956488d7",
+        "type": "parallel"
       }
     ],
-    "id": "e27eec55-db3a-44d3-a370-44cefa4ce628"
+    "id": "6a7720d7-4fa2-4a0e-87ed-dba94ac3e890"
   }
 ]
