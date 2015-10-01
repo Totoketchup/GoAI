@@ -83,100 +83,111 @@
                     "metadata": {
                       "label": ""
                     },
-                    "properties": {
-                      "channel": {
-                        "type": "entityKnowledge",
-                        "value": "main_to_revise"
-                      },
-                      "sender": "",
-                      "content": "content"
-                    },
-                    "children": [],
-                    "id": "79e522c6-1939-48e0-bddd-c9bdc50eb9e0",
-                    "type": "receiveMessage"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "name": "revise",
-                      "inputParams": [
-                        {
-                          "key": "content.status",
-                          "type": "entityKnowledge",
-                          "value": "status"
-                        }
-                      ],
-                      "outputParams": [
-                        {
-                          "key": "status",
-                          "type": "entityKnowledge",
-                          "value": "content.status"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "cd13580e-67dc-400f-bd4e-fc0480a0d6cc",
-                    "type": "action"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "name": "learn",
-                      "inputParams": [
-                        {
-                          "key": "content.learning",
-                          "type": "entityKnowledge",
-                          "value": "learning"
+                    "properties": {},
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
                         },
-                        {
-                          "key": "content.status",
-                          "type": "string",
-                          "value": "status"
-                        }
-                      ],
-                      "outputParams": [
-                        {
-                          "key": "learning",
-                          "type": "entityKnowledge",
-                          "value": "content.learning"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "c2c9485a-ea78-4c52-967b-318ee631eb65",
-                    "type": "action"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "channel": {
-                        "type": "entityKnowledge",
-                        "value": "revise_to_main"
+                        "properties": {
+                          "channel": {
+                            "type": "entityKnowledge",
+                            "value": "main_to_revise"
+                          },
+                          "sender": "",
+                          "content": "content"
+                        },
+                        "children": [],
+                        "id": "79e522c6-1939-48e0-bddd-c9bdc50eb9e0",
+                        "type": "receiveMessage"
                       },
-                      "inputParams": [
-                        {
-                          "key": "content.learning",
-                          "type": "entityKnowledge",
-                          "value": "learning"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "3085dea0-6383-4a1a-8884-ea6f36ba6522",
-                    "type": "sendMessage"
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "name": "revise",
+                          "inputParams": [
+                            {
+                              "key": "content.status",
+                              "type": "entityKnowledge",
+                              "value": "status"
+                            }
+                          ],
+                          "outputParams": [
+                            {
+                              "key": "status",
+                              "type": "entityKnowledge",
+                              "value": "content.status"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "cd13580e-67dc-400f-bd4e-fc0480a0d6cc",
+                        "type": "action"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "name": "learn",
+                          "inputParams": [
+                            {
+                              "key": "content.learning",
+                              "type": "entityKnowledge",
+                              "value": "learning"
+                            },
+                            {
+                              "key": "content.status",
+                              "type": "string",
+                              "value": "status"
+                            }
+                          ],
+                          "outputParams": [
+                            {
+                              "key": "learning",
+                              "type": "entityKnowledge",
+                              "value": "content.learning"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "c2c9485a-ea78-4c52-967b-318ee631eb65",
+                        "type": "action"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "channel": {
+                            "type": "entityKnowledge",
+                            "value": "revise_to_main"
+                          },
+                          "inputParams": [
+                            {
+                              "key": "content.learning",
+                              "type": "entityKnowledge",
+                              "value": "learning"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "3085dea0-6383-4a1a-8884-ea6f36ba6522",
+                        "type": "sendMessage"
+                      }
+                    ],
+                    "id": "6ec53a2a-7781-4bde-b986-56cb331bde64",
+                    "type": "sequence"
                   }
                 ],
-                "id": "6ec53a2a-7781-4bde-b986-56cb331bde64",
-                "type": "sequence"
+                "id": "930c9272-7eb0-4b81-ac79-ba5a4d079ab1",
+                "type": "success"
               }
             ],
             "id": "b3656069-d7cc-4b30-aca2-1e796860bcb9",
