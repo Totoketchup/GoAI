@@ -153,7 +153,7 @@
                         "value": "loaded"
                       },
                       "op2": {
-                        "type": "integer",
+                        "type": "string",
                         "value": "0"
                       },
                       "op": "=="
@@ -194,7 +194,7 @@
                             "properties": {
                               "destination": "loaded",
                               "op": {
-                                "type": "integer",
+                                "type": "string",
                                 "value": "1"
                               }
                             },
