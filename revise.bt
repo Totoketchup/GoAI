@@ -111,9 +111,9 @@
                           "name": "revise",
                           "inputParams": [
                             {
-                              "key": "content.status",
+                              "key": "status",
                               "type": "entityKnowledge",
-                              "value": "status"
+                              "value": "content.status"
                             }
                           ],
                           "outputParams": [
@@ -137,14 +137,14 @@
                           "name": "learn",
                           "inputParams": [
                             {
-                              "key": "content.learning",
+                              "key": "learning",
                               "type": "entityKnowledge",
-                              "value": "learning"
+                              "value": "content.learning"
                             },
                             {
-                              "key": "content.status",
+                              "key": "status",
                               "type": "string",
-                              "value": "status"
+                              "value": "content.status"
                             }
                           ],
                           "outputParams": [
