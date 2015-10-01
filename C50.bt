@@ -24,7 +24,9 @@
             "metadata": {
               "label": ""
             },
-            "properties": {},
+            "properties": {
+              "active": "false"
+            },
             "children": [
               {
                 "activated": true,
@@ -32,7 +34,15 @@
                   "label": ""
                 },
                 "properties": {
-                  "active": "false"
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "subscribed"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op": "=="
                 },
                 "children": [
                   {
@@ -40,89 +50,68 @@
                     "metadata": {
                       "label": ""
                     },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "subscribed"
-                      },
-                      "op2": {
-                        "type": "boolean",
-                        "value": "false"
-                      },
-                      "op": "=="
-                    },
+                    "properties": {},
                     "children": [
                       {
                         "activated": true,
                         "metadata": {
                           "label": ""
                         },
-                        "properties": {},
-                        "children": [
-                          {
-                            "activated": true,
-                            "metadata": {
-                              "label": ""
-                            },
-                            "properties": {
-                              "channel": {
-                                "type": "entityKnowledge",
-                                "value": "revise_to_main"
-                              },
-                              "mode": "subscribe"
-                            },
-                            "children": [],
-                            "id": "c314612d-8145-49f5-afac-7113e11bc159",
-                            "type": "subscribeMessage"
+                        "properties": {
+                          "channel": {
+                            "type": "entityKnowledge",
+                            "value": "revise_to_main"
                           },
-                          {
-                            "activated": true,
-                            "metadata": {
-                              "label": ""
-                            },
-                            "properties": {
-                              "destination": "subscribed",
-                              "op": {
-                                "type": "boolean",
-                                "value": "true"
-                              }
-                            },
-                            "children": [],
-                            "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
-                            "type": "set"
+                          "mode": "subscribe"
+                        },
+                        "children": [],
+                        "id": "c314612d-8145-49f5-afac-7113e11bc159",
+                        "type": "subscribeMessage"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "destination": "subscribed",
+                          "op": {
+                            "type": "boolean",
+                            "value": "true"
                           }
-                        ],
-                        "id": "57774c95-3460-4d95-93c5-f271684aa431",
-                        "type": "sequence"
+                        },
+                        "children": [],
+                        "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
+                        "type": "set"
                       }
                     ],
-                    "id": "d7786ed0-838c-4096-a230-d58e8846239a",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "channel": {
-                        "type": "entityKnowledge",
-                        "value": "revise_to_main"
-                      },
-                      "sender": "",
-                      "content": "main_to_revise"
-                    },
-                    "children": [],
-                    "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
-                    "type": "receiveMessage"
+                    "id": "57774c95-3460-4d95-93c5-f271684aa431",
+                    "type": "sequence"
                   }
                 ],
-                "id": "923ce540-5500-4ae3-855c-610bf9b8efea",
-                "type": "priority"
+                "id": "d7786ed0-838c-4096-a230-d58e8846239a",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "channel": {
+                    "type": "entityKnowledge",
+                    "value": "revise_to_main"
+                  },
+                  "sender": "",
+                  "content": "main_to_revise"
+                },
+                "children": [],
+                "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
+                "type": "receiveMessage"
               }
             ],
-            "id": "c6f5a085-a5f9-49db-b31b-87ba7f2a0030",
-            "type": "success"
+            "id": "923ce540-5500-4ae3-855c-610bf9b8efea",
+            "type": "priority"
           },
           {
             "activated": true,
