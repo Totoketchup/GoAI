@@ -39,13 +39,13 @@
             },
             "properties": {
               "channel": {
-                "type": "string",
+                "type": "entityKnowledge",
                 "value": "revise_to_main"
               },
               "inputParams": [
                 {
                   "key": "main_to_revise",
-                  "type": "string",
+                  "type": "entityKnowledge",
                   "value": "main_to_revise"
                 }
               ]
