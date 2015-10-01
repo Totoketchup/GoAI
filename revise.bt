@@ -8,7 +8,84 @@
       "label": ""
     },
     "properties": {},
-    "children": [],
+    "children": [
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "active": "false"
+        },
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "subscribe"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "d31e0992-265b-4972-b661-ea869a3303d8",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": "Create a channel"
+                },
+                "properties": {
+                  "channel": {
+                    "type": "string",
+                    "value": ""
+                  },
+                  "mode": "subscribeNew"
+                },
+                "children": [],
+                "id": "15fe1cc3-2056-46f0-8062-72ca5aad4103",
+                "type": "subscribeMessage"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "destination": "subscribe",
+                  "op": {
+                    "type": "boolean",
+                    "value": "true"
+                  }
+                },
+                "children": [],
+                "id": "a35c4bb4-79cf-41de-8255-45e31eff286c",
+                "type": "set"
+              }
+            ],
+            "id": "a84c0730-3aab-425c-ad7b-15e72ac255b8",
+            "type": "sequence"
+          }
+        ],
+        "id": "431b4bbd-4858-4384-9983-cbb932252ad5",
+        "type": "priority"
+      }
+    ],
     "id": "e27eec55-db3a-44d3-a370-44cefa4ce628"
   }
 ]
