@@ -31,75 +31,16 @@
                 "metadata": {
                   "label": ""
                 },
-                "properties": {},
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "subscribed"
-                      },
-                      "op2": {
-                        "type": "boolean",
-                        "value": "false"
-                      },
-                      "op": "=="
-                    },
-                    "children": [
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {},
-                        "children": [
-                          {
-                            "activated": true,
-                            "metadata": {
-                              "label": ""
-                            },
-                            "properties": {
-                              "channel": {
-                                "type": "entityKnowledge",
-                                "value": "revise_to_main"
-                              },
-                              "mode": "subscribe"
-                            },
-                            "children": [],
-                            "id": "c314612d-8145-49f5-afac-7113e11bc159",
-                            "type": "subscribeMessage"
-                          },
-                          {
-                            "activated": true,
-                            "metadata": {
-                              "label": ""
-                            },
-                            "properties": {
-                              "destination": "subscribed",
-                              "op": {
-                                "type": "boolean",
-                                "value": "true"
-                              }
-                            },
-                            "children": [],
-                            "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
-                            "type": "set"
-                          }
-                        ],
-                        "id": "57774c95-3460-4d95-93c5-f271684aa431",
-                        "type": "sequence"
-                      }
-                    ],
-                    "id": "d7786ed0-838c-4096-a230-d58e8846239a",
-                    "type": "condition"
-                  }
-                ],
-                "id": "06f97105-406a-4ab7-9218-a6efb436df44",
-                "type": "success"
+                "properties": {
+                  "channel": {
+                    "type": "entityKnowledge",
+                    "value": "revise_to_main"
+                  },
+                  "mode": "subscribe"
+                },
+                "children": [],
+                "id": "c314612d-8145-49f5-afac-7113e11bc159",
+                "type": "subscribeMessage"
               },
               {
                 "activated": true,
