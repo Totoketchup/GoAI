@@ -88,37 +88,48 @@
                         "metadata": {
                           "label": ""
                         },
-                        "properties": {
-                          "channel": {
-                            "type": "entityKnowledge",
-                            "value": "revise_to_main"
+                        "properties": {},
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "channel": {
+                                "type": "entityKnowledge",
+                                "value": "revise_to_main"
+                              },
+                              "sender": "",
+                              "content": "content"
+                            },
+                            "children": [],
+                            "id": "b39d9917-5c38-4217-b544-2fb3ff441cd5",
+                            "type": "receiveMessage"
                           },
-                          "sender": "",
-                          "content": "content"
-                        },
-                        "children": [],
-                        "id": "b39d9917-5c38-4217-b544-2fb3ff441cd5",
-                        "type": "receiveMessage"
-                      },
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {
-                          "destination": "learning",
-                          "op": {
-                            "type": "entityKnowledge",
-                            "value": "content.learning"
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "destination": "learning",
+                              "op": {
+                                "type": "entityKnowledge",
+                                "value": "content.learning"
+                              }
+                            },
+                            "children": [],
+                            "id": "f63ed243-d0f2-437b-81ae-7212098beb20",
+                            "type": "set"
                           }
-                        },
-                        "children": [],
-                        "id": "f63ed243-d0f2-437b-81ae-7212098beb20",
-                        "type": "set"
+                        ],
+                        "id": "b990a2dc-5cab-4c68-943b-c2c67a14342f",
+                        "type": "sequence"
                       }
                     ],
-                    "id": "b990a2dc-5cab-4c68-943b-c2c67a14342f",
-                    "type": "sequence"
+                    "id": "790f9685-4f04-42d0-8411-230af386262e",
+                    "type": "success"
                   }
                 ],
                 "id": "18233e14-f467-434e-a680-284aad6cfb71",
