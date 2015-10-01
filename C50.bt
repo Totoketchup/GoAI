@@ -24,73 +24,82 @@
             "metadata": {
               "label": ""
             },
-            "properties": {
-              "active": "false"
-            },
+            "properties": {},
             "children": [
               {
                 "activated": true,
                 "metadata": {
                   "label": ""
                 },
-                "properties": {
-                  "op1": {
-                    "type": "entityKnowledge",
-                    "value": "subscribed"
-                  },
-                  "op2": {
-                    "type": "boolean",
-                    "value": "false"
-                  },
-                  "op": "=="
-                },
+                "properties": {},
                 "children": [
                   {
                     "activated": true,
                     "metadata": {
                       "label": ""
                     },
-                    "properties": {},
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "subscribed"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "false"
+                      },
+                      "op": "=="
+                    },
                     "children": [
                       {
                         "activated": true,
                         "metadata": {
                           "label": ""
                         },
-                        "properties": {
-                          "channel": {
-                            "type": "entityKnowledge",
-                            "value": "revise_to_main"
+                        "properties": {},
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "channel": {
+                                "type": "entityKnowledge",
+                                "value": "revise_to_main"
+                              },
+                              "mode": "subscribe"
+                            },
+                            "children": [],
+                            "id": "c314612d-8145-49f5-afac-7113e11bc159",
+                            "type": "subscribeMessage"
                           },
-                          "mode": "subscribe"
-                        },
-                        "children": [],
-                        "id": "c314612d-8145-49f5-afac-7113e11bc159",
-                        "type": "subscribeMessage"
-                      },
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {
-                          "destination": "subscribed",
-                          "op": {
-                            "type": "boolean",
-                            "value": "true"
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "destination": "subscribed",
+                              "op": {
+                                "type": "boolean",
+                                "value": "true"
+                              }
+                            },
+                            "children": [],
+                            "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
+                            "type": "set"
                           }
-                        },
-                        "children": [],
-                        "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
-                        "type": "set"
+                        ],
+                        "id": "57774c95-3460-4d95-93c5-f271684aa431",
+                        "type": "sequence"
                       }
                     ],
-                    "id": "57774c95-3460-4d95-93c5-f271684aa431",
-                    "type": "sequence"
+                    "id": "d7786ed0-838c-4096-a230-d58e8846239a",
+                    "type": "condition"
                   }
                 ],
-                "id": "d7786ed0-838c-4096-a230-d58e8846239a",
-                "type": "condition"
+                "id": "06f97105-406a-4ab7-9218-a6efb436df44",
+                "type": "success"
               },
               {
                 "activated": true,
@@ -108,10 +117,48 @@
                 "children": [],
                 "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
                 "type": "receiveMessage"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "boolean",
+                    "value": "false"
+                  },
+                  "op2": {
+                    "type": "boolean",
+                    "value": "true"
+                  },
+                  "op": "=="
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "channel": {
+                        "type": "string",
+                        "value": "revise_to_main"
+                      },
+                      "sender": "",
+                      "content": ""
+                    },
+                    "children": [],
+                    "id": "b39d9917-5c38-4217-b544-2fb3ff441cd5",
+                    "type": "receiveMessage"
+                  }
+                ],
+                "id": "18233e14-f467-434e-a680-284aad6cfb71",
+                "type": "until"
               }
             ],
-            "id": "923ce540-5500-4ae3-855c-610bf9b8efea",
-            "type": "priority"
+            "id": "3ea31153-865f-4c80-aa31-2bb4feac5876",
+            "type": "sequence"
           },
           {
             "activated": true,
