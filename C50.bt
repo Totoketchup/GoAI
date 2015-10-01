@@ -53,11 +53,27 @@
                     "value": "revise_to_main"
                   },
                   "sender": "",
-                  "content": "main_to_revise"
+                  "content": "content"
                 },
                 "children": [],
                 "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
                 "type": "receiveMessage"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "destination": "main_to_revise",
+                  "op": {
+                    "type": "entityKnowledge",
+                    "value": "content.main_to_revise"
+                  }
+                },
+                "children": [],
+                "id": "db2cf501-5f1c-4c25-a419-3918ab1e4ab0",
+                "type": "set"
               },
               {
                 "activated": true,
