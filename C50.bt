@@ -112,20 +112,6 @@
                     "children": [],
                     "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
                     "type": "receiveMessage"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "name": "",
-                      "inputParams": [],
-                      "outputParams": []
-                    },
-                    "children": [],
-                    "id": "cac42065-da0e-4bdc-a4e7-5b97d921ff68",
-                    "type": "action"
                   }
                 ],
                 "id": "923ce540-5500-4ae3-855c-610bf9b8efea",
