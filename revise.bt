@@ -14,9 +14,7 @@
         "metadata": {
           "label": ""
         },
-        "properties": {
-          "active": "false"
-        },
+        "properties": {},
         "children": [
           {
             "activated": true,
@@ -41,49 +39,111 @@
                   },
                   "op": "=="
                 },
-                "children": [],
-                "id": "d31e0992-265b-4972-b661-ea869a3303d8",
-                "type": "condition"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Create a channel"
-                },
-                "properties": {
-                  "channel": {
-                    "type": "string",
-                    "value": ""
-                  },
-                  "mode": "subscribeNew"
-                },
-                "children": [],
-                "id": "15fe1cc3-2056-46f0-8062-72ca5aad4103",
-                "type": "subscribeMessage"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {
-                  "destination": "subscribe",
-                  "op": {
-                    "type": "boolean",
-                    "value": "true"
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {},
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": "Create a channel"
+                        },
+                        "properties": {
+                          "channel": {
+                            "type": "string",
+                            "value": "channel"
+                          },
+                          "mode": "subscribeNew"
+                        },
+                        "children": [],
+                        "id": "15fe1cc3-2056-46f0-8062-72ca5aad4103",
+                        "type": "subscribeMessage"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "destination": "subscribe",
+                          "op": {
+                            "type": "boolean",
+                            "value": "true"
+                          }
+                        },
+                        "children": [],
+                        "id": "a35c4bb4-79cf-41de-8255-45e31eff286c",
+                        "type": "set"
+                      }
+                    ],
+                    "id": "a84c0730-3aab-425c-ad7b-15e72ac255b8",
+                    "type": "sequence"
                   }
-                },
-                "children": [],
-                "id": "a35c4bb4-79cf-41de-8255-45e31eff286c",
-                "type": "set"
+                ],
+                "id": "80ea2dfe-8fdc-41bf-ba9a-dcb45649bd18",
+                "type": "condition"
               }
             ],
-            "id": "a84c0730-3aab-425c-ad7b-15e72ac255b8",
-            "type": "sequence"
+            "id": "3c5580c9-347e-412b-b254-06acda663f99",
+            "type": "success"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "channel": {
+                "type": "string",
+                "value": ""
+              },
+              "sender": "",
+              "content": ""
+            },
+            "children": [],
+            "id": "c9b79687-edd2-4d3b-8598-c7d4c02421eb",
+            "type": "receiveMessage"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "revise",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "d6d2d926-cfed-460e-8edf-6a0e749fc388",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "learn",
+              "inputParams": [
+                {
+                  "type": "string",
+                  "value": ""
+                }
+              ],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "dbe46ebb-f281-4b5e-bd6d-f9427d868b02",
+            "type": "action"
           }
         ],
-        "id": "431b4bbd-4858-4384-9983-cbb932252ad5",
-        "type": "priority"
+        "id": "2ac0f72e-debc-4288-9974-31fe4f1e552e",
+        "type": "sequence"
       }
     ],
     "id": "e27eec55-db3a-44d3-a370-44cefa4ce628"
