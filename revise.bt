@@ -159,7 +159,7 @@
                     },
                     "properties": {
                       "channel": {
-                        "type": "string",
+                        "type": "entityKnowledge",
                         "value": "revise_to_main"
                       },
                       "inputParams": [
