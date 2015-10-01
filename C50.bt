@@ -153,8 +153,8 @@
                         "value": "loaded"
                       },
                       "op2": {
-                        "type": "boolean",
-                        "value": "false"
+                        "type": "integer",
+                        "value": "0"
                       },
                       "op": "=="
                     },
@@ -194,8 +194,8 @@
                             "properties": {
                               "destination": "loaded",
                               "op": {
-                                "type": "boolean",
-                                "value": "true"
+                                "type": "integer",
+                                "value": "1"
                               }
                             },
                             "children": [],
