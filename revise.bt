@@ -130,9 +130,14 @@
                       "name": "learn",
                       "inputParams": [
                         {
-                          "key": "content",
+                          "key": "content.learning",
                           "type": "entityKnowledge",
-                          "value": "content"
+                          "value": "learning"
+                        },
+                        {
+                          "key": "content.status",
+                          "type": "string",
+                          "value": "status"
                         }
                       ],
                       "outputParams": [
