@@ -60,10 +60,10 @@
                         "properties": {
                           "channel": {
                             "type": "entityKnowledge",
-                            "value": "revise_channel"
+                            "value": "receive_channel"
                           },
                           "sender": "",
-                          "content": "receive_channel"
+                          "content": "main_to_revise"
                         },
                         "children": [],
                         "id": "701376b4-9e6f-48c8-9d19-d98b17f94b4d",
