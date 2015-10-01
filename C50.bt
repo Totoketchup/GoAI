@@ -29,6 +29,111 @@
                   "label": ""
                 },
                 "properties": {
+                  "active": "false"
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "op1": {
+                        "type": "entityKnowledge",
+                        "value": "subscribed"
+                      },
+                      "op2": {
+                        "type": "boolean",
+                        "value": "false"
+                      },
+                      "op": "=="
+                    },
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {},
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "channel": {
+                                "type": "entityKnowledge",
+                                "value": "revise_to_main"
+                              },
+                              "mode": "subscribe"
+                            },
+                            "children": [],
+                            "id": "c314612d-8145-49f5-afac-7113e11bc159",
+                            "type": "subscribeMessage"
+                          },
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "destination": "subscribed",
+                              "op": {
+                                "type": "boolean",
+                                "value": "true"
+                              }
+                            },
+                            "children": [],
+                            "id": "7bb56f6d-b5ce-4948-93c7-14fc44256b8d",
+                            "type": "set"
+                          }
+                        ],
+                        "id": "57774c95-3460-4d95-93c5-f271684aa431",
+                        "type": "sequence"
+                      }
+                    ],
+                    "id": "d7786ed0-838c-4096-a230-d58e8846239a",
+                    "type": "condition"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "channel": {
+                        "type": "entityKnowledge",
+                        "value": "revise_to_main"
+                      },
+                      "sender": "",
+                      "content": "main_to_revise"
+                    },
+                    "children": [],
+                    "id": "c7dc9645-22d5-46c8-8dfa-636e05d8c861",
+                    "type": "receiveMessage"
+                  }
+                ],
+                "id": "923ce540-5500-4ae3-855c-610bf9b8efea",
+                "type": "priority"
+              }
+            ],
+            "id": "c6f5a085-a5f9-49db-b31b-87ba7f2a0030",
+            "type": "success"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
                   "op1": {
                     "type": "entityKnowledge",
                     "value": "loaded"
@@ -66,22 +171,6 @@
                         "children": [],
                         "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
                         "type": "action"
-                      },
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {
-                          "channel": {
-                            "type": "string",
-                            "value": "revise"
-                          },
-                          "mode": "subscribeNew"
-                        },
-                        "children": [],
-                        "id": "2ad032c1-8571-4485-9db7-44d6686448cc",
-                        "type": "subscribeMessage"
                       },
                       {
                         "activated": true,
@@ -271,9 +360,20 @@
             "properties": {
               "channel": {
                 "type": "entityKnowledge",
-                "value": "channel"
+                "value": "main_to_revise"
               },
-              "inputParams": []
+              "inputParams": [
+                {
+                  "key": "learning",
+                  "type": "entityKnowledge",
+                  "value": "learning"
+                },
+                {
+                  "key": "status",
+                  "type": "string",
+                  "value": "status"
+                }
+              ]
             },
             "children": [],
             "id": "0e070ff0-20d6-4a3d-9371-53b5aefcff10",
