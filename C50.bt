@@ -411,7 +411,7 @@
                     },
                     {
                       "key": "status",
-                      "type": "string",
+                      "type": "entityKnowledge",
                       "value": "status"
                     }
                   ]
