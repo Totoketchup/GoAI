@@ -290,7 +290,7 @@
                     {
                       "key": "action",
                       "type": "entityKnowledge",
-                      "value": "action"
+                      "value": "status.action"
                     }
                   ]
                 },
@@ -315,7 +315,7 @@
                     "properties": {
                       "op1": {
                         "type": "entityKnowledge",
-                        "value": "action"
+                        "value": "status.action"
                       },
                       "op2": {
                         "type": "integer",
@@ -356,7 +356,7 @@
                     "properties": {
                       "op1": {
                         "type": "entityKnowledge",
-                        "value": "action"
+                        "value": "status.action"
                       },
                       "op2": {
                         "type": "integer",
