@@ -160,7 +160,17 @@
             "metadata": {
               "label": ""
             },
-            "properties": {},
+            "properties": {
+              "op1": {
+                "type": "boolean",
+                "value": "false"
+              },
+              "op2": {
+                "type": "boolean",
+                "value": "true"
+              },
+              "op": "=="
+            },
             "children": [
               {
                 "activated": true,
@@ -174,16 +184,144 @@
                     "metadata": {
                       "label": ""
                     },
+                    "properties": {},
+                    "children": [
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "op1": {
+                            "type": "entityKnowledge",
+                            "value": "loaded"
+                          },
+                          "op2": {
+                            "type": "string",
+                            "value": "0"
+                          },
+                          "op": "=="
+                        },
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {},
+                            "children": [
+                              {
+                                "activated": true,
+                                "metadata": {
+                                  "label": ""
+                                },
+                                "properties": {
+                                  "name": "load",
+                                  "inputParams": [],
+                                  "outputParams": [
+                                    {
+                                      "key": "learning",
+                                      "type": "entityKnowledge",
+                                      "value": "learning"
+                                    }
+                                  ]
+                                },
+                                "children": [],
+                                "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                                "type": "action"
+                              },
+                              {
+                                "activated": true,
+                                "metadata": {
+                                  "label": ""
+                                },
+                                "properties": {
+                                  "destination": "loaded",
+                                  "op": {
+                                    "type": "string",
+                                    "value": "1"
+                                  }
+                                },
+                                "children": [],
+                                "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
+                                "type": "set"
+                              }
+                            ],
+                            "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
+                            "type": "sequence"
+                          }
+                        ],
+                        "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
+                        "type": "condition"
+                      }
+                    ],
+                    "id": "1c0400b4-2eb9-4b13-88b8-18a315080e3e",
+                    "type": "success"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "Wait for Sensor Trigger"
+                    },
                     "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "loaded"
-                      },
-                      "op2": {
-                        "type": "string",
-                        "value": "0"
-                      },
-                      "op": "=="
+                      "name": "detectPeople",
+                      "inputParams": [
+                        {
+                          "key": "status",
+                          "type": "entityKnowledge",
+                          "value": "status"
+                        }
+                      ],
+                      "outputParams": [
+                        {
+                          "key": "status",
+                          "type": "entityKnowledge",
+                          "value": "status"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "adcc2ebf-a41a-4cef-815b-8a84485baf6f",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "name": "c50",
+                      "inputParams": [
+                        {
+                          "key": "learning",
+                          "type": "entityKnowledge",
+                          "value": "learning"
+                        },
+                        {
+                          "key": "status",
+                          "type": "entityKnowledge",
+                          "value": "status"
+                        }
+                      ],
+                      "outputParams": [
+                        {
+                          "key": "action",
+                          "type": "entityKnowledge",
+                          "value": "status.action"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "a045c67c-f86e-4ff5-b775-282fc150459f",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "active": "false"
                     },
                     "children": [
                       {
@@ -191,238 +329,121 @@
                         "metadata": {
                           "label": ""
                         },
-                        "properties": {},
+                        "properties": {
+                          "op1": {
+                            "type": "entityKnowledge",
+                            "value": "status.action"
+                          },
+                          "op2": {
+                            "type": "integer",
+                            "value": "0"
+                          },
+                          "op": "=="
+                        },
                         "children": [
                           {
                             "activated": true,
                             "metadata": {
-                              "label": ""
+                              "label": "LIGHT OFF"
                             },
                             "properties": {
-                              "name": "load",
+                              "name": "lightoff",
                               "inputParams": [],
                               "outputParams": [
                                 {
-                                  "key": "learning",
+                                  "key": "light",
                                   "type": "entityKnowledge",
-                                  "value": "learning"
+                                  "value": "light"
                                 }
                               ]
                             },
                             "children": [],
-                            "id": "4b7a6e95-d7ef-4377-8384-2fb41895db5a",
+                            "id": "9dab6294-9a22-4b1f-a37e-6df1a494b6e4",
                             "type": "action"
+                          }
+                        ],
+                        "id": "9f35f201-2b7f-4965-a811-d32f0ce47216",
+                        "type": "condition"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "op1": {
+                            "type": "entityKnowledge",
+                            "value": "status.action"
                           },
+                          "op2": {
+                            "type": "integer",
+                            "value": "1"
+                          },
+                          "op": "=="
+                        },
+                        "children": [
                           {
                             "activated": true,
                             "metadata": {
-                              "label": ""
+                              "label": "LIGHT"
                             },
                             "properties": {
-                              "destination": "loaded",
-                              "op": {
-                                "type": "string",
-                                "value": "1"
-                              }
+                              "name": "light",
+                              "inputParams": [],
+                              "outputParams": [
+                                {
+                                  "key": "light",
+                                  "type": "entityKnowledge",
+                                  "value": "light"
+                                }
+                              ]
                             },
                             "children": [],
-                            "id": "c9ef0172-3a82-4e76-9e38-3c3123281f12",
-                            "type": "set"
+                            "id": "c66b0d38-9a3b-49df-a9fe-acee43ceb38b",
+                            "type": "action"
                           }
                         ],
-                        "id": "7d42cb1f-eeba-4926-ab87-47881520f20f",
-                        "type": "sequence"
+                        "id": "c73810e2-eb81-4ae3-a1ee-0a3b5d1fe17a",
+                        "type": "condition"
                       }
                     ],
-                    "id": "4c060cb1-68c1-4ddd-9f1a-5c048a946c16",
-                    "type": "condition"
-                  }
-                ],
-                "id": "1c0400b4-2eb9-4b13-88b8-18a315080e3e",
-                "type": "success"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "Wait for Sensor Trigger"
-                },
-                "properties": {
-                  "name": "detectPeople",
-                  "inputParams": [
-                    {
-                      "key": "status",
-                      "type": "entityKnowledge",
-                      "value": "status"
-                    }
-                  ],
-                  "outputParams": [
-                    {
-                      "key": "status",
-                      "type": "entityKnowledge",
-                      "value": "status"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "adcc2ebf-a41a-4cef-815b-8a84485baf6f",
-                "type": "action"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {
-                  "name": "c50",
-                  "inputParams": [
-                    {
-                      "key": "learning",
-                      "type": "entityKnowledge",
-                      "value": "learning"
-                    },
-                    {
-                      "key": "status",
-                      "type": "entityKnowledge",
-                      "value": "status"
-                    }
-                  ],
-                  "outputParams": [
-                    {
-                      "key": "action",
-                      "type": "entityKnowledge",
-                      "value": "status.action"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "a045c67c-f86e-4ff5-b775-282fc150459f",
-                "type": "action"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": ""
-                },
-                "properties": {
-                  "active": "false"
-                },
-                "children": [
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": ""
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "status.action"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "0"
-                      },
-                      "op": "=="
-                    },
-                    "children": [
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": "LIGHT OFF"
-                        },
-                        "properties": {
-                          "name": "lightoff",
-                          "inputParams": [],
-                          "outputParams": [
-                            {
-                              "key": "light",
-                              "type": "entityKnowledge",
-                              "value": "light"
-                            }
-                          ]
-                        },
-                        "children": [],
-                        "id": "9dab6294-9a22-4b1f-a37e-6df1a494b6e4",
-                        "type": "action"
-                      }
-                    ],
-                    "id": "9f35f201-2b7f-4965-a811-d32f0ce47216",
-                    "type": "condition"
+                    "id": "a53618bb-cc76-44c2-a63b-bd56dde5e8fa",
+                    "type": "priority"
                   },
                   {
                     "activated": true,
                     "metadata": {
-                      "label": ""
+                      "label": "send the status to learn"
                     },
                     "properties": {
-                      "op1": {
+                      "channel": {
                         "type": "entityKnowledge",
-                        "value": "status.action"
+                        "value": "main_to_revise"
                       },
-                      "op2": {
-                        "type": "integer",
-                        "value": "1"
-                      },
-                      "op": "=="
+                      "inputParams": [
+                        {
+                          "key": "learning",
+                          "type": "entityKnowledge",
+                          "value": "learning"
+                        },
+                        {
+                          "key": "status",
+                          "type": "entityKnowledge",
+                          "value": "status"
+                        }
+                      ]
                     },
-                    "children": [
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": "LIGHT"
-                        },
-                        "properties": {
-                          "name": "light",
-                          "inputParams": [],
-                          "outputParams": [
-                            {
-                              "key": "light",
-                              "type": "entityKnowledge",
-                              "value": "light"
-                            }
-                          ]
-                        },
-                        "children": [],
-                        "id": "c66b0d38-9a3b-49df-a9fe-acee43ceb38b",
-                        "type": "action"
-                      }
-                    ],
-                    "id": "c73810e2-eb81-4ae3-a1ee-0a3b5d1fe17a",
-                    "type": "condition"
+                    "children": [],
+                    "id": "0e070ff0-20d6-4a3d-9371-53b5aefcff10",
+                    "type": "sendMessage"
                   }
                 ],
-                "id": "a53618bb-cc76-44c2-a63b-bd56dde5e8fa",
-                "type": "priority"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "send the status to learn"
-                },
-                "properties": {
-                  "channel": {
-                    "type": "entityKnowledge",
-                    "value": "main_to_revise"
-                  },
-                  "inputParams": [
-                    {
-                      "key": "learning",
-                      "type": "entityKnowledge",
-                      "value": "learning"
-                    },
-                    {
-                      "key": "status",
-                      "type": "entityKnowledge",
-                      "value": "status"
-                    }
-                  ]
-                },
-                "children": [],
-                "id": "0e070ff0-20d6-4a3d-9371-53b5aefcff10",
-                "type": "sendMessage"
+                "id": "3253c220-6e6a-47b6-9e31-21eae3d2f034",
+                "type": "sequence"
               }
             ],
-            "id": "3253c220-6e6a-47b6-9e31-21eae3d2f034",
-            "type": "sequence"
+            "id": "f922b9d5-9089-4d56-92aa-ae277b8ef377",
+            "type": "until"
           }
         ],
         "id": "0ff42cfa-a44f-4385-a78d-dbe28c7ad68d",
