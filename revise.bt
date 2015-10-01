@@ -62,7 +62,7 @@
             "properties": {
               "op1": {
                 "type": "boolean",
-                "value": "false"
+                "value": "true"
               },
               "op2": {
                 "type": "boolean",
