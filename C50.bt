@@ -133,12 +133,12 @@
                               "inputParams": [
                                 {
                                   "key": "learning",
-                                  "type": "string",
+                                  "type": "entityKnowledge",
                                   "value": "learning"
                                 },
                                 {
                                   "key": "status",
-                                  "type": "string",
+                                  "type": "entityKnowledge",
                                   "value": "content.status"
                                 }
                               ],
