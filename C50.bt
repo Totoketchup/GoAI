@@ -129,6 +129,20 @@
                               "label": ""
                             },
                             "properties": {
+                              "name": "",
+                              "inputParams": [],
+                              "outputParams": []
+                            },
+                            "children": [],
+                            "id": "1c156b36-ee40-4e73-8c35-929aeaa79522",
+                            "type": "action"
+                          },
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
                               "destination": "learning",
                               "op": {
                                 "type": "entityKnowledge",
