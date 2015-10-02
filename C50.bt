@@ -135,6 +135,11 @@
                                   "key": "learning",
                                   "type": "string",
                                   "value": "learning"
+                                },
+                                {
+                                  "key": "status",
+                                  "type": "string",
+                                  "value": "content.status"
                                 }
                               ],
                               "outputParams": [
@@ -148,22 +153,6 @@
                             "children": [],
                             "id": "1c156b36-ee40-4e73-8c35-929aeaa79522",
                             "type": "action"
-                          },
-                          {
-                            "activated": true,
-                            "metadata": {
-                              "label": ""
-                            },
-                            "properties": {
-                              "destination": "learning",
-                              "op": {
-                                "type": "entityKnowledge",
-                                "value": "content.learning"
-                              }
-                            },
-                            "children": [],
-                            "id": "f63ed243-d0f2-437b-81ae-7212098beb20",
-                            "type": "set"
                           }
                         ],
                         "id": "b990a2dc-5cab-4c68-943b-c2c67a14342f",
