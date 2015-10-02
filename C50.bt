@@ -130,8 +130,20 @@
                             },
                             "properties": {
                               "name": "",
-                              "inputParams": [],
-                              "outputParams": []
+                              "inputParams": [
+                                {
+                                  "key": "learning",
+                                  "type": "string",
+                                  "value": "learning"
+                                }
+                              ],
+                              "outputParams": [
+                                {
+                                  "key": "learning",
+                                  "type": "entityKnowledge",
+                                  "value": "learning"
+                                }
+                              ]
                             },
                             "children": [],
                             "id": "1c156b36-ee40-4e73-8c35-929aeaa79522",
