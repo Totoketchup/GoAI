@@ -134,6 +134,28 @@
                           "label": ""
                         },
                         "properties": {
+                          "channel": {
+                            "type": "entityKnowledge",
+                            "value": "revise_to_main"
+                          },
+                          "inputParams": [
+                            {
+                              "key": "learning",
+                              "type": "entityKnowledge",
+                              "value": "content.learning"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "3085dea0-6383-4a1a-8884-ea6f36ba6522",
+                        "type": "sendMessage"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
                           "name": "learn",
                           "inputParams": [
                             {
@@ -158,28 +180,6 @@
                         "children": [],
                         "id": "c2c9485a-ea78-4c52-967b-318ee631eb65",
                         "type": "action"
-                      },
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {
-                          "channel": {
-                            "type": "entityKnowledge",
-                            "value": "revise_to_main"
-                          },
-                          "inputParams": [
-                            {
-                              "key": "learning",
-                              "type": "entityKnowledge",
-                              "value": "content.learning"
-                            }
-                          ]
-                        },
-                        "children": [],
-                        "id": "3085dea0-6383-4a1a-8884-ea6f36ba6522",
-                        "type": "sendMessage"
                       }
                     ],
                     "id": "6ec53a2a-7781-4bde-b986-56cb331bde64",
