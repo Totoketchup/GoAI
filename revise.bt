@@ -149,37 +149,6 @@
                         "children": [],
                         "id": "3085dea0-6383-4a1a-8884-ea6f36ba6522",
                         "type": "sendMessage"
-                      },
-                      {
-                        "activated": true,
-                        "metadata": {
-                          "label": ""
-                        },
-                        "properties": {
-                          "name": "learn",
-                          "inputParams": [
-                            {
-                              "key": "learning",
-                              "type": "entityKnowledge",
-                              "value": "content.learning"
-                            },
-                            {
-                              "key": "status",
-                              "type": "entityKnowledge",
-                              "value": "content.status"
-                            }
-                          ],
-                          "outputParams": [
-                            {
-                              "key": "learning",
-                              "type": "entityKnowledge",
-                              "value": "content.learning"
-                            }
-                          ]
-                        },
-                        "children": [],
-                        "id": "c2c9485a-ea78-4c52-967b-318ee631eb65",
-                        "type": "action"
                       }
                     ],
                     "id": "6ec53a2a-7781-4bde-b986-56cb331bde64",
