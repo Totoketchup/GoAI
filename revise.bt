@@ -140,9 +140,9 @@
                           },
                           "inputParams": [
                             {
-                              "key": "learning",
+                              "key": "status",
                               "type": "entityKnowledge",
-                              "value": "content.learning"
+                              "value": "content.status"
                             }
                           ]
                         },
