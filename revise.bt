@@ -107,26 +107,58 @@
                         "metadata": {
                           "label": ""
                         },
-                        "properties": {
-                          "name": "revise",
-                          "inputParams": [
-                            {
-                              "key": "status",
-                              "type": "entityKnowledge",
-                              "value": "content.status"
-                            }
-                          ],
-                          "outputParams": [
-                            {
-                              "key": "status",
-                              "type": "entityKnowledge",
-                              "value": "content.status"
-                            }
-                          ]
-                        },
-                        "children": [],
-                        "id": "cd13580e-67dc-400f-bd4e-fc0480a0d6cc",
-                        "type": "action"
+                        "properties": {},
+                        "children": [
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": "Revise only for entering people"
+                            },
+                            "properties": {
+                              "op1": {
+                                "type": "entityKnowledge",
+                                "value": "content.status.people"
+                              },
+                              "op2": {
+                                "type": "integer",
+                                "value": "1"
+                              },
+                              "op": "=="
+                            },
+                            "children": [
+                              {
+                                "activated": true,
+                                "metadata": {
+                                  "label": ""
+                                },
+                                "properties": {
+                                  "name": "revise",
+                                  "inputParams": [
+                                    {
+                                      "key": "status",
+                                      "type": "entityKnowledge",
+                                      "value": "content.status"
+                                    }
+                                  ],
+                                  "outputParams": [
+                                    {
+                                      "key": "status",
+                                      "type": "entityKnowledge",
+                                      "value": "content.status"
+                                    }
+                                  ]
+                                },
+                                "children": [],
+                                "id": "cd13580e-67dc-400f-bd4e-fc0480a0d6cc",
+                                "type": "action"
+                              }
+                            ],
+                            "id": "9dd9930a-3b82-4494-a05d-b6908f443a4e",
+                            "type": "condition"
+                          }
+                        ],
+                        "id": "073edd83-1607-4630-a41b-d771e8198aa0",
+                        "type": "success"
                       },
                       {
                         "activated": true,
