@@ -257,7 +257,7 @@
                 "type": "success"
               },
               {
-                "activated": true,
+                "activated": false,
                 "metadata": {
                   "label": "Wait for Sensor Trigger"
                 },
