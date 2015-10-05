@@ -20,7 +20,7 @@
         },
         "children": [
           {
-            "activated": false,
+            "activated": true,
             "metadata": {
               "label": ""
             },
@@ -76,7 +76,7 @@
                 "type": "set"
               },
               {
-                "activated": false,
+                "activated": true,
                 "metadata": {
                   "label": ""
                 },
@@ -291,14 +291,14 @@
                   "name": "c50",
                   "inputParams": [
                     {
-                      "key": "learning",
-                      "type": "entityKnowledge",
-                      "value": "learning"
-                    },
-                    {
                       "key": "status",
                       "type": "entityKnowledge",
                       "value": "status"
+                    },
+                    {
+                      "key": "learning",
+                      "type": "entityKnowledge",
+                      "value": "learning"
                     }
                   ],
                   "outputParams": [
@@ -314,7 +314,7 @@
                 "type": "action"
               },
               {
-                "activated": false,
+                "activated": true,
                 "metadata": {
                   "label": ""
                 },
@@ -409,7 +409,7 @@
                 "type": "priority"
               },
               {
-                "activated": false,
+                "activated": true,
                 "metadata": {
                   "label": "send the status to learn"
                 },
