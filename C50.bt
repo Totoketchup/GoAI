@@ -325,26 +325,6 @@
                   {
                     "activated": true,
                     "metadata": {
-                      "label": "If there is no action (empty tree)"
-                    },
-                    "properties": {
-                      "op1": {
-                        "type": "entityKnowledge",
-                        "value": "status.action"
-                      },
-                      "op2": {
-                        "type": "integer",
-                        "value": "-1"
-                      },
-                      "op": "=="
-                    },
-                    "children": [],
-                    "id": "3c4b7a65-8da5-40b7-bfc2-3c29b68883b6",
-                    "type": "condition"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
                       "label": ""
                     },
                     "properties": {
