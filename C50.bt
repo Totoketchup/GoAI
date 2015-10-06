@@ -288,7 +288,7 @@
                   "label": ""
                 },
                 "properties": {
-                  "name": "c50",
+                  "name": "C4.5",
                   "inputParams": [
                     {
                       "key": "status",
