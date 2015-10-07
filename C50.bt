@@ -411,7 +411,7 @@
               {
                 "activated": true,
                 "metadata": {
-                  "label": "send the status to learn"
+                  "label": "send the status to revise"
                 },
                 "properties": {
                   "channel": {
